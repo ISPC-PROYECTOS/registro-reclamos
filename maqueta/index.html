@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio - GRI</title>
+    <link rel="stylesheet" href="/maqueta/css/styles.css">
 </head>
+
 <body>
-    
+    <header>
+        <nav>
+            <a href="index.html" class="nav-logo">
+                <img src="/maqueta/imagenes/gri-logo.png" alt="Logo GRI">
+            </a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="dashboard-user.html">Dashboard</a></li>
+                <li><a href="metricas.html">Métricas</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+        <!--Desde aqui va el codigo-->
+    <div class="formulario">
+    <img src="/maqueta/imagenes/gri-full-logo.png" alt="Logo GRI" class="logo-gri">
+    <br>
+    <form action="dashboard-user.html" method="post">
+        <label for="username">Usuario(Email):</label></br>
+        <input type="email" id="username" name="username" required>
+        <br>
+        <label for="password">Contraseña:</label></br>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+    <h3>¿No tienes cuenta?</h3>
+    <p class="boton-registro"><a href="registro.html">Regístrate aquí</a></p>
+    </div>
+
+    <!--Hasta aqui el codigo-->
+    <footer>
+        <p>&copy; 2025 GRI. Todos los derechos reservados.</p>
+        <p>Desarrollado por SharkCode</p>
+        <a target="_blank" href="mailto:shark-code@gmail.com">Contacto</a>
+    </footer>
 </body>
 </html>
