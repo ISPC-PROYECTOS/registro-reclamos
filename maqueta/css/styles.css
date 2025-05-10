@@ -1,4 +1,27 @@
+/* Estructura principal */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #cbdad5;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.contenido-principal {
+    flex: 1;
+    padding-top: 60px; /* Espacio para la navbar fija ya que traía problemas al mostrar contenido*/
+    padding-bottom: 60px; /* Espacio para el footer */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+/* Navbar */
 nav{
     display: flex;
     justify-content: center;
@@ -10,10 +33,9 @@ nav{
     z-index: 1000;
 }
 .nav-logo img{
-	display: block;
-	width: 4.4em;
-	height: auto;
-	
+    display: block;
+    width: 4.4em;
+    height: auto;
 }
 nav ul{
     list-style: none;
@@ -34,15 +56,14 @@ nav ul li:hover{
     background-color: #3a415a;
 }
 
+/* Footer */
 footer{
     background-color: #566981;
     color: #cbdad5;
     text-align: center;
-    padding: 2px 0;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    padding: 10px 0;
     width: 100%;
+    margin-top: auto;
     z-index: 1000;
     font-size: 14px;
 }
@@ -53,61 +74,86 @@ footer a{
 footer a:hover{
     text-decoration: underline;
 }
-body{
-	/*background: linear-gradient(to left, #34344e, #566981, #3a415a);*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	background-color: #cbdad5;
-}
+
+/* Formularios */
 .formulario{
-	color: #cbdad5;
+    color: #cbdad5;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
 .formulario img{
-	width: 15em;
-	height: auto;
-	margin-bottom: none;
+    width: 15em;
+    height: auto;
+    margin-bottom: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .formulario a{
     color: #cbdad5;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-	padding: 10px;
-	border-radius: 5px;
-	background-color: #566981;
-	transition: background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #566981;
+    transition: background-color 0.3s ease;
 }
 .formulario a:hover{
-	background-color: #cbdad5;
-	color: #566981;
+    background-color: #cbdad5;
+    color: #566981;
 }
 .formulario input[type="email"],
 .formulario input[type="text"],
 .formulario input[type="password"]{
-	width: 100%;
-	padding: 10px;
-	margin: 5px 0;
-	border: none;
-	border-radius: 5px;
-	background-color: #566981;
-	color: #cbdad5;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #566981;
+    color: #cbdad5;
 }
 .formulario button[type="submit"]{
-	width: 100%;
-	padding: 10px;
-	margin: 5px 0;
-	border: none;
-	border-radius: 5px;
-	background-color: #566981;
-	color: #cbdad5;
-	font-size: 18px;
-	font-weight: bold;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #566981;
+    color: #cbdad5;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.formulario button[type="submit"]:hover {
+    background-color: #3a415a;
 }
 .formulario label{
-	color: #566981;
-	font-size: 18px;
-	font-weight: bold;
+    color: #566981;
+    font-size: 18px;
+    font-weight: bold;
+}
+.formulario h3 {
+    color: #566981;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.boton-registro {
+    margin-top: 10px;
+}
+
+.formulario-registro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.campo-formulario {
+    width: 48%;
+    margin-bottom: 15px;
 }

@@ -1,64 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro - GRI</title>
-    <link rel="stylesheet" href="/maqueta/css/styles.css">
-</head>
+    <link rel="stylesheet" href="/maqueta/css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <a href="index.html" class="nav-logo">
-                <img src="/maqueta/imagenes/gri-logo.png" alt="Logo GRI">
-            </a>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="registro.html">Registro</a></li>
-                <li><a href="dashboard-user.html">Dashboard</a></li>
-                <li><a href="metricas.html">Métricas</a></li>
-                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <a href="index.html" class="nav-logo">
+          <img src="/maqueta/imagenes/gri-logo.png" alt="Logo GRI" />
+        </a>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="registro.html">Registro</a></li>
+          <li><a href="dashboard-user.html">Dashboard</a></li>
+          <li><a href="metricas.html">Métricas</a></li>
+          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+        </ul>
+      </nav>
     </header>
-    <br>
-    <br>
-    <!--Desde aqui va el codigo-->
 
-    <div class="formulario">
-    <img src="/maqueta/imagenes/gri-full-logo.png" alt="Logo GRI" class="logo-gri">
-    <br>
-    <div  class="formulario-registro">
+    <div class="contenido-principal">
+      <div class="formulario">
+        <img
+          src="/maqueta/imagenes/gri-full-logo.png"
+          alt="Logo GRI"
+          class="logo-gri"
+        />
+        <br />
         <form action="index.html" method="post">
-            <label for="nombre">Nombre:</label><br>
-            <input type="text" id="nombre" name="nombre" required>
-            <br>
-            <label for="apellido">Apellido:</label><br>
-            <input type="text" id="apellido" name="apellido" required>
-            <br>
-            <label for="dni">DNI:</label><br>
-            <input type="text" id="dni" name="dni" required>
-            <br>
-            <label for="username">Email:</label><br>
-            <input type="email" id="username" name="username" required>
-            <br>
-            <label for="password">Contraseña:</label><br>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <label for="confirm-password">Confirmar Contraseña:</label><br>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-            <br>
-            <input type="submit" value="Registrar">
-        </div>
+          <div class="formulario-registro">
+            <div class="campo-formulario">
+              <label for="nombre">Nombre:</label><br />
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+            <div class="campo-formulario">
+              <label for="apellido">Apellido:</label><br />
+              <input type="text" id="apellido" name="apellido" required />
+            </div>
+            <div class="campo-formulario">
+              <label for="dni">DNI:</label><br />
+              <input type="text" id="dni" name="dni" required />
+            </div>
+            <div class="campo-formulario">
+              <label for="username">Usuario(Email):</label><br />
+              <input type="email" id="username" name="username" required />
+            </div>
+            <div class="campo-formulario">
+              <label for="password">Contraseña:</label><br />
+              <input type="password" id="password" name="password" required />
+            </div>
+            <div class="campo-formulario">
+              <label for="confirm-password">Confirmar Contraseña:</label><br />
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                required
+              />
+            </div>
+          </div>
+          <br />
+          <button type="submit">Registrarse</button>
+        </form>
+        <h3>¿Ya tienes cuenta?</h3>
+        <p class="boton-registro">
+          <a href="index.html">Iniciar sesión aquí</a>
+        </p>
+      </div>
     </div>
-    </form>
 
-        <!--Hasta aqui el codigo-->
     <footer>
-        <p>&copy; 2025 GRI. Todos los derechos reservados.</p>
-        <p>Desarrollado por SharkCode</p>
-        <a target="_blank" href="mailto:shark-code@gmail.com">Contacto</a>
+      <p>&copy; 2025 GRI. Todos los derechos reservados.</p>
+      <p>Desarrollado por SharkCode</p>
+      <a target="_blank" href="mailto:shark-code@gmail.com">Contacto</a>
     </footer>
-</body>
+  </body>
 </html>
