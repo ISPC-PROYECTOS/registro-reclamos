@@ -157,3 +157,42 @@ footer a:hover{
     width: 48%;
     margin-bottom: 15px;
 }
+
+/*sobre-nosotros*/
+
+.sobre-nosotros {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #566981;
+
+}
+.tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 3px; 
+    flex-wrap: wrap;
+    
+
+}
+.tarjeta {
+    height: 300px;
+    width: 350px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #566981;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.tarjeta img {
+    width: 50%; 
+    height: auto;
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
