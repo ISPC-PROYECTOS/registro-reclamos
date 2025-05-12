@@ -165,7 +165,7 @@ footer a:hover{
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
-    height: auto;
+    height: 100%;
     margin-top: 50px;
     padding: 20px;
   
