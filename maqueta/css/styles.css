@@ -4,6 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #cbdad5;
+     
 }
 body {
     display: flex;
@@ -82,11 +83,12 @@ footer a:hover{
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    box-sizing: border-box;
 }
 .formulario img{
     width: 15em;
     height: auto;
-    margin-bottom: none;
+    margin-bottom: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -115,6 +117,7 @@ footer a:hover{
     border-radius: 5px;
     background-color: #566981;
     color: #cbdad5;
+    box-sizing: border-box;
 }
 .formulario button[type="submit"]{
     width: 100%;
@@ -128,6 +131,8 @@ footer a:hover{
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    display: block;
 }
 .formulario button[type="submit"]:hover {
     background-color: #3a415a;
@@ -156,69 +161,8 @@ footer a:hover{
 .campo-formulario {
     width: 48%;
     margin-bottom: 15px;
+    box-sizing: border-box;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Dashboard agente */
 .bienvenida-agente {
@@ -303,4 +247,60 @@ footer a:hover{
   background-color: #89a7b1;
   color: #34344e;
   cursor: pointer;
+}
+
+/*sobre-nosotros*/
+
+.fondo-nosotros {
+    background-image: url("../imagenes/fondo-nosotros.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100%;
+    margin-top: 50px;
+    padding: 20px;
+  
+}
+
+.sobre-nosotros {
+    max-width: 800px;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    
+    padding: 20px;
+    text-align: center;
+    background-color: #566981;
+
+}
+.sobre-nosotros h2{
+    color: #cbdad5;
+    margin-bottom: 5px;
+}
+.tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 3px; 
+    flex-wrap: wrap;
+    
+
+}
+.tarjeta {
+    height: 320px;
+    width: 350px; 
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #566981;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.tarjeta img {
+    width: 50%; 
+    height: 50%;
+    border-radius: 50%; 
+    object-fit: cover; 
 }
