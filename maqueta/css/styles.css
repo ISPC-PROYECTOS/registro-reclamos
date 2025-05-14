@@ -157,3 +157,88 @@ footer a:hover{
     width: 48%;
     margin-bottom: 15px;
 }
+
+/* Dashboard agente */
+.bienvenida-agente {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 10px 10px;
+  color: #3a415a;
+  background-color: #cbdad5;
+}
+
+.boton-reclamos {
+  margin-left: auto;
+  padding: 8px 12px;
+  background-color: #34344e;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tabla-reclamos  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3a415a;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.tabla-reclamos th{
+    background-color: #566981;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.tabla-reclamos td{
+    border-top: 1px #3a415a solid;
+    padding: 10px;
+}
+
+.boton-atender{
+    background-color: #34344e;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;   
+    text-decoration: none; 
+    display: inline-block;    
+}
+
+.formulario-agente {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-agente h3{
+    text-align: center;
+    color: #3a415a;
+}
+
+.boton-guardar{
+    padding: 10px;
+    background-color: #34344e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.boton-reclamos:hover,
+.boton-atender:hover,
+.boton-guardar:hover {
+  background-color: #89a7b1;
+  color: #34344e;
+  cursor: pointer;
+}
