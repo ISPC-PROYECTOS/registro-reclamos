@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard agente</title>
+  <link rel="stylesheet" href="/maqueta/css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="/maqueta/imagenes/gri-logo.png" alt="Logo GRI" />
+      </a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="dashboard-user.html">Dashboard</a></li>
+        <li><a href="metricas.html">Métricas</a></li>
+        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="contenido-principal">
+    <div class="dashboard-agente">
+      <!-- Sección de bienvenida -->
+      <div class="bienvenida-agente">
+        <img src="/maqueta/imagenes/perfil-user.png" alt="Usuario" width="100">
+
+        <div class="texto-bienvenida">
+          <h2>Bienvenido</h2>
+          <h3>Nombre agente</h3>
+        </div>
+
+        <a href="#tabla-reclamos" class="boton-reclamos">Reclamos asignados</a>
+      </div>
+
+
+      <!-- Tabla de reclamos -->
+      <div id="tabla-reclamos" class="tabla-reclamos">
+        <h3>Reclamos asignados</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Fecha y Hora</th>
+              <th>Estado</th>
+              <th>Descripción</th>
+              <th>Prioridad</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>001</td>
+              <td>Juan Pérez</td>
+              <td>13/05/2025 10:32</td>
+              <td>Recibido</td>
+              <td>Problema con servidor</td>
+              <td>Alta</td>
+              <td><a href="#form-atencion" class="boton-atender">Atender</a></td>
+            </tr>
+            <tr>
+              <td>002</td>
+              <td>Sandra Rodríguez</td>
+              <td>13/05/2025 13:37</td>
+              <td>Recibido</td>
+              <td>Problema con impresora compartida</td>
+              <td>Media</td>
+              <td><a href="#form-atencion" class="boton-atender">Atender</a></td>
+            </tr>
+            <tr>
+              <td>003</td>
+              <td>Miguel Fernandez</td>
+              <td>13/05/2025 15:45</td>
+              <td>Recibido</td>
+              <td>Solicitud de cambio de mouse</td>
+              <td>Baja</td>
+              <td><a href="#form-atencion" class="boton-atender">Atender</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Formulario de atención -->
+      <form id="form-atencion" class="formulario-agente" method="post">
+        <h3>Atender reclamo</h3>
+        <label for="estado">Nuevo estado:</label>
+        <select id="estado" name="estado">
+          <option value="recibido">Recibido</option>
+          <option value="en-proceso">En proceso</option>
+          <option value="resuelto">Resuelto</option>
+        </select>
+        <label for="acciones">Acciones realizadas:</label>
+        <textarea id="acciones" name="acciones" rows="4"></textarea>
+        <button type="submit" class="boton-guardar">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GRI. Todos los derechos reservados.</p>
+    <p>Desarrollado por SharkCode</p>
+    <a target="_blank" href="mailto:shark-code@gmail.com">Contacto</a>
+  </footer>
+</body>
+</html>
