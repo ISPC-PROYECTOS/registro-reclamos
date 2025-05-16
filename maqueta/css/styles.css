@@ -304,3 +304,54 @@ footer a:hover{
     border-radius: 50%; 
     object-fit: cover; 
 }
+
+.formulario-reclamo {
+    color: #566981;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #cbdad5;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-reclamo h2 {
+    text-align: center;
+    color: #3a415a;
+    margin-bottom: 30px;
+}
+
+.formulario-reclamo label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.formulario-reclamo input,
+.formulario-reclamo select,
+.formulario-reclamo textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #566981;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.formulario-reclamo button {
+    background-color: #566981;
+    color: #cbdad5;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-reclamo button:hover {
+    background-color: #3a415a;
+}
