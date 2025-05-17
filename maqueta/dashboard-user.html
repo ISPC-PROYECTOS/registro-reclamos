@@ -11,7 +11,7 @@
 
 <body>
   <header>
-    <nav>git s
+    <nav>
       <a href="index.html" class="nav-logo">
         <img src="/maqueta/imagenes/gri-logo.png" alt="Logo GRI" />
       </a>
@@ -33,10 +33,11 @@
 
         <div class="texto-bienvenida">
           <h2>Bienvenido</h2>
-          <h3>Miguel Fernandez</h3>
+          <h3>Nombre Usuario</h3>
         </div>
-        <!-- para que es este enlace?-->
+        
         <a href="#tabla-reclamos" class="boton-reclamos">Reclamos emitidos</a>
+        <a href="#form-usuario" class="boton-emitir">Emitir Reclamo</a>
       </div>
 
 
@@ -52,7 +53,7 @@
               <th>Estado</th>
               <th>Descripción</th>
               <th>Prioridad</th>
-              <th>Acción</th>
+              <th>Calificar</th>
             </tr>
           </thead>
           <tbody>
@@ -63,7 +64,7 @@
               <td>Resuelto</td>
               <td>Problema con servidor</td>
               <td>Alta</td>
-              <td><a href="#form-seguimiento" class="boton-acciones">Acciones</a></td>
+              <td><a href="#form-calificacion" class="boton-calificar">Calificar</a></td>
             </tr>
             <tr>
               <td>002</td>
@@ -71,7 +72,7 @@
               <td>En proceso</td>
               <td>Problema con impresora compartida</td>
               <td>Media</td>
-              <td><a href="#form-seguimiento" class="boton-acciones">Acciones</a></td>
+              <td><a href="#form-calificacion" class="boton-calificar">Calificar</a></td>
             </tr>
             <tr>
               <td>003</td>
@@ -79,7 +80,7 @@
               <td>Emitido</td>
               <td>Solicitud de cambio de mouse</td>
               <td>Baja</td>
-              <td><a href="#form-seguimiento" class="boton-acciones">Acciones</a></td>
+              <td><a href="#form-calificacion" class="boton-calificar">Calificar</a></td>
 
             </tr>
           </tbody>
@@ -87,7 +88,7 @@
       </div>
 
       <!-- Formulario de registro de reclamos -->
-      <form id="form-seguimiento" class="formulario-usuario" method="post">
+      <form id="form-usuario" class="formulario-usuario" method="post">
         <h3>Emitir reclamo</h3>
         <label for="prioridad">Prioridad:</label>
         <select id="prioridad" name="prioridad">
