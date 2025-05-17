@@ -394,8 +394,3 @@ footer a:hover{
     margin: 0 auto;
     box-sizing: border-box;
 }
-
-/* Asegurar que el contenido principal ocupe todo el alto necesario */
-.contenido-principal {
-    min-height: calc(100vh - 120px); /* Altura total menos navbar y footer */
-}
