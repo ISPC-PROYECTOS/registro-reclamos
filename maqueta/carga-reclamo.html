@@ -6,11 +6,12 @@
     <title>Carga de Reclamo - GRI</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
     <header>
       <nav>
         <a href="index.html" class="nav-logo">
-          <img src="./imagenes/gri-logo.png" alt="Logo GRI" />
+          <img src="imagenes/gri-logo.png" alt="Logo GRI" />
         </a>
         <ul>
           <li><a href="index.html">Inicio</a></li>
@@ -24,33 +25,28 @@
 
     <div class="contenido-principal">
       <div class="formulario">
-        <h2>Carga de Reclamo</h2>
+        <img src="imagenes/gri-full-logo.png" alt="Logo GRI" class="logo-gri" />
+        <br />
         <form action="procesar-reclamo.html" method="post">
-          <label for="nombre-completo">Nombre Completo:</label><br />
-          <input type="text" id="nombre-completo" name="nombre-completo" required /><br /><br />
-
-          <label for="fecha">Fecha:</label><br />
-          <input type="date" id="fecha" name="fecha" required /><br /><br />
-
-          <label for="tipo-reclamo">Tipo de Reclamo:</label><br />
-          <select id="tipo-reclamo" name="tipo-reclamo" required>
-            <option value="">Seleccione una opción</option>
-            <option value="producto">Producto</option>
-            <option value="servicio">Servicio</option>
-            <option value="otro">Otro</option>
-          </select><br /><br />
-
-          <label for="prioridad">Prioridad:</label><br />
-          <select id="prioridad" name="prioridad" required>
-            <option value="">Seleccione una opción</option>
-            <option value="alta">Alta</option>
-            <option value="media">Media</option>
-            <option value="baja">Baja</option>
-          </select><br /><br />
-
-          <label for="descripcion">Descripción del Reclamo:</label><br />
-          <textarea id="descripcion" name="descripcion" rows="4" required></textarea><br /><br />
-
+          <div class="campo-formulario campo-completo">
+            <label for="descripcion">Descripción del Reclamo:</label><br />
+            <textarea
+              id="descripcion"
+              name="descripcion"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <div class="campo-formulario campo-completo">
+            <label for="prioridad">Prioridad:</label><br />
+            <select id="prioridad" name="prioridad" required>
+              <option value="">Seleccione una opción</option>
+              <option value="alta">Alta</option>
+              <option value="media">Media</option>
+              <option value="baja">Baja</option>
+            </select>
+          </div>
+          <br />
           <button type="submit">Enviar Reclamo</button>
         </form>
       </div>

@@ -355,3 +355,47 @@ footer a:hover{
 .formulario-reclamo button:hover {
     background-color: #3a415a;
 }
+
+/* Estilos para textarea */
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #566981;
+    color: #cbdad5;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Estilos para select */
+.formulario select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #566981;
+    color: #cbdad5;
+    box-sizing: border-box;
+}
+
+/* Clase adicional para campos de formulario que ocupan ancho completo */
+.campo-completo {
+    width: 100% !important;
+}
+
+/* Asegurarse que el formulario esté correctamente centrado */
+.formulario {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Asegurar que el contenido principal ocupe todo el alto necesario */
+.contenido-principal {
+    min-height: calc(100vh - 120px); /* Altura total menos navbar y footer */
+}
