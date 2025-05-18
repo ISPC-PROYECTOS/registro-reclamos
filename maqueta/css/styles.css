@@ -4,6 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #cbdad5;
+     
 }
 body {
     display: flex;
@@ -162,3 +163,149 @@ footer a:hover{
     margin-bottom: 15px;
     box-sizing: border-box;
 }
+}
+
+/* Dashboard agente */
+.bienvenida-agente {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 10px 10px;
+  color: #3a415a;
+  background-color: #cbdad5;
+}
+
+.boton-reclamos {
+  margin-left: auto;
+  padding: 8px 12px;
+  background-color: #34344e;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tabla-reclamos  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3a415a;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.tabla-reclamos th{
+    background-color: #566981;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.tabla-reclamos td{
+    border-top: 1px #3a415a solid;
+    padding: 10px;
+}
+
+.boton-atender{
+    background-color: #34344e;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;   
+    text-decoration: none; 
+    display: inline-block;    
+}
+
+.formulario-agente {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-agente h3{
+    text-align: center;
+    color: #3a415a;
+}
+
+.boton-guardar{
+    padding: 10px;
+    background-color: #34344e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.boton-reclamos:hover,
+.boton-atender:hover,
+.boton-guardar:hover {
+  background-color: #89a7b1;
+  color: #34344e;
+  cursor: pointer;
+}
+
+/*sobre-nosotros*/
+
+.fondo-nosotros {
+    background-image: url("../imagenes/fondo-nosotros.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100%;
+    margin-top: 50px;
+    padding: 20px;
+  
+}
+
+.sobre-nosotros {
+    max-width: 800px;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    
+    padding: 20px;
+    text-align: center;
+    background-color: #566981;
+
+}
+.sobre-nosotros h2{
+    color: #cbdad5;
+    margin-bottom: 5px;
+}
+.tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 3px; 
+    flex-wrap: wrap;
+    
+
+}
+.tarjeta {
+    height: 320px;
+    width: 350px; 
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #566981;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.tarjeta img {
+    width: 50%; 
+    height: 50%;
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+
+
+

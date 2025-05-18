@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Usuario</title>
+  <link rel="stylesheet" href="/maqueta/css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="/maqueta/imagenes/gri-logo.png" alt="Logo GRI" />
+      </a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="dashboard-user.html">Dashboard</a></li>
+        <li><a href="metricas.html">Métricas</a></li>
+        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="contenido-principal">
+    <div class="dashboard-usuario">
+      <!-- Sección de bienvenida -->
+      <div class="bienvenida-usuario">
+        <img src="/maqueta/imagenes/perfil-user.png" alt="Usuario" width="100">
+
+        <div class="texto-bienvenida">
+          <h2>Bienvenido</h2>
+          <h3>Nombre Usuario</h3>
+        </div>
+        
+        <a href="#tabla-reclamos" class="boton-reclamos">Reclamos emitidos</a>
+        <a href="/maqueta/carga-reclamo.html" class="boton-reclamos">Emitir Reclamo</a>
+      </div>
+
+
+
+      <!-- Tabla de reclamos -->
+      <div id="tabla-reclamos" class="tabla-reclamos">
+        <h3>Reclamos emitidos</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha y Hora</th>
+              <th>Estado</th>
+              <th>Descripción</th>
+              <th>Prioridad</th>
+              <th>Calificar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>001</td>
+              
+              <td>12/05/2025 10:32</td>
+              <td>Resuelto</td>
+              <td>Problema con servidor</td>
+              <td>Alta</td>
+              <td><a href="#form-calificacion" class="boton-calificar">Calificar</a></td>
+            </tr>
+            <tr>
+              <td>002</td>
+              <td>13/05/2025 13:37</td>
+              <td>En proceso</td>
+              <td>Problema con impresora compartida</td>
+              <td>Media</td>
+              <td><a href="#form-calificacion" class="boton-calificar">Calificar</a></td>
+            </tr>
+            <tr>
+              <td>003</td>
+              <td>14/05/2025 15:45</td>
+              <td>Emitido</td>
+              <td>Solicitud de cambio de mouse</td>
+              <td>Baja</td>
+              <td><a href="#form-calificacion" class="boton-calificar">Calificar</a></td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GRI. Todos los derechos reservados.</p>
+    <p>Desarrollado por SharkCode</p>
+    <a target="_blank" href="mailto:shark-code@gmail.com">Contacto</a>
+  </footer>
+</body>
+</html>
