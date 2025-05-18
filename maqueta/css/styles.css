@@ -243,7 +243,6 @@ footer a:hover{
 
 .boton-reclamos:hover,
 .boton-atender:hover,
-.boton-emitir:hover,
 .boton-guardar:hover {
   background-color: #89a7b1;
   color: #34344e;
@@ -307,13 +306,5 @@ footer a:hover{
 }
 
 
-.boton-emitir {
-  margin-left: auto;
-  padding: 8px 12px;
-  background-color: #34344e;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
+
 
