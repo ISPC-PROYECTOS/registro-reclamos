@@ -306,6 +306,39 @@ footer a:hover{
     object-fit: cover; 
 }
 
+/* Estilos para carga de reclamos */
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #566981;
+    color: #cbdad5;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 100px;
+}
 
+.formulario select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #566981;
+    color: #cbdad5;
+    box-sizing: border-box;
+}
 
+.campo-completo {
+    width: 100% !important;
+}
+
+.formulario-reclamo {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
