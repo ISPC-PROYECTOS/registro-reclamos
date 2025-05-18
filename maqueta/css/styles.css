@@ -4,12 +4,17 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #cbdad5;
-     
 }
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
 }
 .contenido-principal {
     flex: 1;
@@ -163,28 +168,27 @@ footer a:hover{
     margin-bottom: 15px;
     box-sizing: border-box;
 }
-}
 
 /* Dashboard agente */
 .bienvenida-agente {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 10px 10px;
-  color: #3a415a;
-  background-color: #cbdad5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 10px 10px;
+    color: #3a415a;
+    background-color: #cbdad5;
 }
 
 .boton-reclamos {
-  margin-left: auto;
-  padding: 8px 12px;
-  background-color: #34344e;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+    margin-left: auto;
+    padding: 8px 12px;
+    background-color: #34344e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .tabla-reclamos  {
@@ -245,9 +249,9 @@ footer a:hover{
 .boton-reclamos:hover,
 .boton-atender:hover,
 .boton-guardar:hover {
-  background-color: #89a7b1;
-  color: #34344e;
-  cursor: pointer;
+    background-color: #89a7b1;
+    color: #34344e;
+    cursor: pointer;
 }
 
 /*sobre-nosotros*/
@@ -260,7 +264,6 @@ footer a:hover{
     height: 100%;
     margin-top: 50px;
     padding: 20px;
-  
 }
 
 .sobre-nosotros {
@@ -283,8 +286,6 @@ footer a:hover{
     justify-content: center;
     gap: 3px; 
     flex-wrap: wrap;
-    
-
 }
 .tarjeta {
     height: 320px;
