@@ -124,34 +124,15 @@ footer a:hover{
 }
 /* Dashboard agente */
 .bienvenida-agente {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-    padding: 10px 10px;
     color: #3a415a;
     background-color: #cbdad5;
-}
-
-.boton-reclamos {
-    margin-left: auto;
-    padding: 8px 12px;
-    background-color: #34344e;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
 }
 
-.tabla-reclamos  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #3a415a;
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 10px;
+.boton-reclamos {
+    background-color: #34344e;
+    color: white;
+    border: #34344e;
 }
 
 .tabla-reclamos th{
@@ -172,31 +153,21 @@ footer a:hover{
 .boton-atender{
     background-color: #34344e;
     color: white;
-    font-weight: bold;
     border: none;
-    padding: 6px 10px;
-    border-radius: 5px;   
-    text-decoration: none; 
-    display: inline-block;    
 }
 
-.formulario-agente {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.formulario-agente{
+    background: white;
 }
 
-.formulario-agente h3{
-    text-align: center;
+.formulario-agente h3, .tabla-reclamos h3{
     color: #3a415a;
 }
 
 .boton-guardar{
-    padding: 10px;
     background-color: #34344e;
     color: white;
     border: none;
-    border-radius: 5px;
 }
 
 .boton-reclamos:hover,
