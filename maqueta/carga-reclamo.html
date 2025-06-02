@@ -1,65 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carga de Reclamo - GRI</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carga de Reclamo - GRI</title>
+
+  <!-- Bootstrap solo para estructura -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <!-- Estilos personalizados (colores, fuentes, etc.) -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar fixed-top">
+      <div class="container d-flex justify-content-between align-items-center">
         <a href="index.html" class="nav-logo">
-          <img src="./imagenes/gri-logo.png" alt="Logo GRI" />
+          <img src="imagenes/gri-logo.png" alt="Logo GRI" class="img-fluid" />
         </a>
-        <ul>
+        <ul class="d-flex m-0">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="registro.html">Registro</a></li>
-          <li><a href="dashboard-user.html">Dashboard</a></li>
-          <li><a href="metricas.html">Métricas</a></li>
+          <li><a href="dashboard-user.html">Dashboard Usuario</a></li>
+          <li><a href="dashboard-agente.html">Dashboard Agente</a></li>
           <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <div class="contenido-principal">
-      <div class="formulario-reclamo">
-        <h2>Carga de Reclamo</h2>
-        <form action="procesar-reclamo.html" method="post">
-          <label for="nombre-completo">Nombre Completo:</label><br />
-          <input type="text" id="nombre-completo" name="nombre-completo" required /><br /><br />
-
-          <label for="fecha">Fecha:</label><br />
-          <input type="date" id="fecha" name="fecha" required /><br /><br />
-
-          <label for="tipo-reclamo">Tipo de Reclamo:</label><br />
-          <select id="tipo-reclamo" name="tipo-reclamo" required>
-            <option value="">Seleccione una opción</option>
-            <option value="producto">Producto</option>
-            <option value="servicio">Servicio</option>
-            <option value="otro">Otro</option>
-          </select><br /><br />
-
+  <div class="contenido-principal">
+    <div class="formulario formulario-reclamo">
+      <img src="imagenes/gri-full-logo.png" alt="Logo GRI" class="logo-gri img-fluid" />
+      <br />
+      <form action="procesar-reclamo.html" method="post">
+        <div class="campo-formulario campo-completo">
+          <label for="descripcion">Descripción del Reclamo:</label><br />
+          <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+        </div>
+        <div class="campo-formulario campo-completo">
           <label for="prioridad">Prioridad:</label><br />
           <select id="prioridad" name="prioridad" required>
             <option value="">Seleccione una opción</option>
             <option value="alta">Alta</option>
             <option value="media">Media</option>
             <option value="baja">Baja</option>
-          </select><br /><br />
-
-          <label for="descripcion">Descripción del Reclamo:</label><br />
-          <textarea id="descripcion" name="descripcion" rows="4" required></textarea><br /><br />
-
-          <button type="submit">Enviar Reclamo</button>
-        </form>
-      </div>
+          </select>
+        </div>
+        <br />
+        <button type="submit">Enviar Reclamo</button>
+      </form>
     </div>
+  </div>
 
-    <footer>
-      <p>&copy; 2025 GRI. Todos los derechos reservados.</p>
-      <p>Desarrollado por SharkCode</p>
-      <a target="_blank" href="mailto:shark-code@gmail.com">Contacto</a>
-    </footer>
-  </body>
+  <footer>
+    <p>&copy; 2025 GRI. Todos los derechos reservados.</p>
+    <p>Desarrollado por SharkCode</p>
+    <a target="_blank" href="mailto:shark-code@gmail.com">Contacto</a>
+  </footer>
+
+  <script src="js/bootstrap.bundle.js"></script>
+</body>
 </html>
