@@ -1,58 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro - GRI</title>
+    <title>Inicio - GRI</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <header>
-      <nav>
-        <a href="index.html" class="nav-logo">
-          <img src="imagenes/gri-logo.png" alt="Logo GRI" />
-        </a>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="registro.html">Registro</a></li>
-          <li><a href="dashboard-user.html">Dashboard</a></li>
-          <li><a href="metricas.html">Métricas</a></li>
-          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-        </ul>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a href="index.html" class="navbar-brand nav-logo">
+            <img src="imagenes/gri-logo-resize.png" alt="Logo GRI" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="registro.html">Registro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dashboard-user.html"
+                  >Dashboard Usuario</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dashboard-agente.html"
+                  >Dashboard Agente</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sobre-nosotros.html"
+                  >Sobre Nosotros</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
-    <div class="contenido-principal">
+    <div class="container-fluid">
       <div class="formulario">
         <img src="imagenes/gri-full-logo.png" alt="Logo GRI" class="logo-gri" />
         <br />
-        <form action="index.html" method="post">
-          <div class="formulario-registro">
-            <div class="campo-formulario">
-              <label for="nombre">Nombre:</label><br />
-              <input type="text" id="nombre" name="nombre" required />
+        <form action="dashboard-user.html" method="post">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <label for="nombre" class="form-label">Nombre:</label><br />
+              <input type="text" class="form-control" id="nombre" name="nombre" required />
             </div>
-            <div class="campo-formulario">
-              <label for="apellido">Apellido:</label><br />
-              <input type="text" id="apellido" name="apellido" required />
+            <div class="col-lg-6">
+              <label for="apellido" class="form-label">Apellido:</label><br />
+              <input type="text" class="form-control" id="apellido" name="apellido" required />
             </div>
-            <div class="campo-formulario">
-              <label for="dni">DNI:</label><br />
-              <input type="text" id="dni" name="dni" required />
+            <div class="col-lg-6">
+              <label for="dni" class="form-label">DNI:</label><br />
+              <input type="text" class="form-control" id="dni" name="dni" required />
             </div>
-            <div class="campo-formulario">
-              <label for="username">Usuario(Email):</label><br />
-              <input type="email" id="username" name="username" required />
+            <div class="col-lg-6">
+              <label for="username" class="form-label">Usuario(Email):</label><br />
+              <input type="email" class="form-control" id="username" name="username" required />
             </div>
-            <div class="campo-formulario">
-              <label for="password">Contraseña:</label><br />
-              <input type="password" id="password" name="password" required />
+            <div class="col-lg-6">
+              <label for="password" class="form-label">Contraseña:</label><br />
+              <input type="password" class="form-control" id="password" name="password" required />
             </div>
-            <div class="campo-formulario">
-              <label for="confirm-password">Confirmar Contraseña:</label><br />
+            <div class="col-lg-6">
+              <label for="confirm-password" class="form-label">Confirmar Contraseña:</label><br />
               <input
                 type="password"
+                class="form-control"
                 id="confirm-password"
                 name="confirm-password"
                 required
@@ -60,7 +100,7 @@
             </div>
           </div>
           <br />
-          <button type="submit">Registrarse</button>
+          <button type="submit" class="btn btn-primary">Registrarse</button>
         </form>
         <h3>¿Ya tienes cuenta?</h3>
         <p class="boton-registro">
@@ -69,10 +109,15 @@
       </div>
     </div>
 
-    <footer>
-      <p>&copy; 2025 GRI. Todos los derechos reservados.</p>
-      <p>Desarrollado por SharkCode</p>
-      <a target="_blank" href="mailto:shark-code@gmail.com">Contacto</a>
+    <footer class="text-center mt-auto">
+      <div class="container">
+        <p class="text-muted">
+          &copy; 2025 GRI. Todos los derechos reservados.
+        </p>
+        <p>Desarrollado por SharkCode</p>
+        <a target="_blank" href="mailto:shark-code@gmail.com">Contacto</a>
+      </div>
     </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
