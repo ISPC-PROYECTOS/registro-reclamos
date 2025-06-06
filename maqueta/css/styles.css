@@ -186,9 +186,8 @@ footer a:hover{
     background-position: center;
     background-repeat: repeat;
     height: 100%;
-    padding: 20px;
+    padding: 0;
 }
-
 .sobre-nosotros {
     max-width: 800px;
     height: auto;
