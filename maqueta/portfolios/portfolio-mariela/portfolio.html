@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Portafolio- Mariela  SUAREZ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Deva:wght@100..800&family=Savate:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="../../css/stylesM.css">
+    <link rel="stylesheet" href="css/stylesM.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
@@ -86,35 +88,36 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <img src="ProyGranja.png" class="img-responsive col-sm-4" alt="Proyecto 1">
+                            <img src="imagenes/ProyGranja.png" class="img-responsive col-sm-4" alt="Proyecto 1">
                             <h3 class="savate-subtitulo text-center">Automatización GNV</h3>
                             <p>Se propone el diseño de un sistema de sensorización de un gallinero 
                                 para monitorear las condiciones ambientales del mismo en tiempo real</p>
                             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalProyecto1">
-                Ver Detalles
-            </button>
+                Ver Proyecto</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <img src="ProyCancha.png" class="img-circle  img-responsive col-sm-4" alt="Proyecto 2">
+                            <img src="imagenes/ProyCancha.png" class="img-circle  img-responsive col-sm-4" alt="Proyecto 2">
                             <h3 class="savate-subtitulo text-center">Control de Stock y Venta RODECPADEL</h3>
                             <p>Desarrollo de un sistema de información que permita llevar el control de ventas y compras del sector anexo a la cancha de Padel</p>
-                            <a href="#" class="btn btn-primary btn-sm" target="_blank">Ver Proyecto</a>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalProyecto2">
+                Ver Proyecto</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <img src="logo_IPET331.jpg" class="img-responsive col-sm-4" alt="Proyecto 3">
+                            <img src="imagenes/logo_IPET331.jpg" class="img-responsive col-sm-4" alt="Proyecto 3">
                             <h3 class="savate-subtitulo text-center">Nuevos Diseños Curriculares Orientación PROGRAMACIÓN Y ROBÓTICA</h3>
                             <p>Como directora del IPET N°331 y especialista en desarrollo de Software, en colaboración con los docentes de la orientación debemos construir
                                  los Diseños de los espacios curriculares específicos ya que dicha orientación se inicia en algunas escuelas de la provincia 
                                 a partir del 2025 </p>
-                            <a href="#" class="btn btn-primary btn-sm" target="_blank">Ver Proyecto</a>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalProyecto3">
+                Ver Proyecto</button>
                         </div>
                     </div>
                 </div>
@@ -187,43 +190,87 @@
         </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
+<section> 
     <div class="modal fade" id="modalProyecto1" tabindex="-1" role="dialog" aria-labelledby="miModalProyecto1Label">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="miModalProyecto1Label">Detalles de Nombre del Proyecto 1</h4>
+        <h3 class="savate-titulo text-center" id="miModalProyecto1Label">Automatización gallinero GNV</h3>
       </div>
       <div class="modal-body">
-        <img src="https://via.placeholder.com/600x350?text=Imagen+Grande+Proyecto+1" class="img-responsive center-block" alt="Imagen Grande Proyecto 1" style="margin-bottom: 20px;">
-        <p>Esta es la descripción detallada del **Proyecto 1**. Aquí puedes hablar sobre:</p>
+        <img src="imagenes/ProyGranja.png" class="img-responsive center-block modal-img-small" alt="Imagen Grande Proyecto 1" style="margin-bottom: 20px;">
+        <p>Detalles del proyecto</p>
         <ul>
-            <li>**El problema:** ¿Qué desafío intentó resolver este proyecto?</li>
-            <li>**La solución:** ¿Cómo lo abordaste?</li>
-            <li>**Tecnologías usadas:** Mencioná las herramientas y lenguajes clave (Ej: HTML, CSS, JavaScript, Python, Base de Datos X).</li>
-            <li>**Resultados:** ¿Qué se logró con este proyecto? ¿Algún impacto o métrica?</li>
-            <li>**Lecciones aprendidas:** ¿Qué aprendiste durante su desarrollo?</li>
+            <li>El Productor necesita atender los factores ambientales dentro del gallinero para un cuidado de calidad de las aves</li>
+            <li>Se pensó en sensores ambientales conectados a una computadora que fuera recibiendo y mostrando los valores en tiempo real</li>
+            <li>Se usarían placas ESP32 con sus sensores, una conexión local LoRa, la plataforma Grafana para visualizar los datos de manera gráfica </li>
+            <li>Se ha presupuestado el proyecto y presentado al productor que solicitó el análisis.</li>
+            <li>Aun no ha sido implementado. </li>
         </ul>
-        <p>Puedes añadir más párrafos, imágenes, enlaces a repositorios de GitHub, o incluso un video si lo tienes.</p>
-        
-        <p style="margin-top: 20px;">
-            <a href="https://github.com/tuusuario/proyecto1" class="btn btn-default" target="_blank">
-                <span class="glyphicon glyphicon-globe"></span> Ver en GitHub
-            </a>
-            <a href="https://tuproyecto1.com" class="btn btn-default" target="_blank" style="margin-left: 10px;">
-                <span class="glyphicon glyphicon-link"></span> Ver en Vivo
-            </a>
-        </p>
+        <p>OBJETIVO: Llegar a los pequeños productores avícolas con una propuesta accesible económicamente y eficaz operativamente.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
-  
+</div>
+
+<div class="modal fade" id="modalProyecto2" tabindex="-1" role="dialog" aria-labelledby="miModalProyecto2Label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="savate-titulo text-center" id="miModalProyecto2Label">Control y Stock de Ventas RODECPADEL</h3>
+      </div>
+      <div class="modal-body">
+        <img src="imagenes/ProyCancha.png" class="img-responsive center-block modal-img-small" alt="Imagen Grande Proyecto 2" style="margin-bottom: 20px;">
+        <p>Detalles del proyecto</p>
+        <ul>
+            <li>La dueña del local anexó venta de bebidas, comida e insumos a la oferta deportiva</li>
+            <li>Al contar con empleados en el local necesita llevar un control, principalmente de stock para no perder ventas </li>
+            <li>Se programaría una pagina en HTML, con base de datos en SQL, todo de manera local. </li>
+            <li>Comenzaríamos en julio con el análisis</li>
+        </ul>
+        <p>OBJETIVO: Desarrollar un sistema pequeño y a medida del usuario, accesible económicamente y eficaz operativamente. Sin dejar de pensar en la posible escalabilidad y reproducción en otros locales similares.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalProyecto3" tabindex="-1" role="dialog" aria-labelledby="miModalProyecto3Label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="savate-titulo text-center" id="miModalProyecto3Label">Nuevos Diseños Curriculares Orientación PROGRAMACIÓN Y ROBÓTICA</h3>
+      </div>
+      <div class="modal-body">
+        <img src="imagenes/logo_IPET331.jpg" class="img-responsive center-block modal-img-small" alt="Imagen Grande Proyecto 1" style="margin-bottom: 20px;">
+        <p>Detalles del proyecto</p>
+        <ul>
+            <li>La comunidad necesitaba una opción de nivel medio, con una orientación con buena salida laboral</li>
+            <li>Se solicitó la aprtura de una Orientación en Informática para la división B. Luego pudimos elegir una nueva propuesta, 
+                más específica de parte del ministerio y nueva en toda la provincia y la tomamos</li>
+            <li>Se trabajará con los docentes en el diseño situado de contenidos y aprendizajes significativos y alcanzables para el nivel </li>
+            <li>En este momento están iniciando las clases y la escritura de los proyectos</li>
+            <li>En implementación</li>
+        </ul>
+        <p>OBJETIVO: Ofrecer a nuestros estudiantes una educación de calidad y ser pioneros en la construcción de la nueva Orientación.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
 </body>
 </html>

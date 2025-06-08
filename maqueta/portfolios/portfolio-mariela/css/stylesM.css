@@ -74,3 +74,16 @@ a {
   font-style: italic;
   color: rgb(127, 34, 214);
 }
+
+.modal-content {
+   
+    background-color: #dcbce4; 
+    border: 3px solid #570a85;
+    border-radius: 6px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-img-small {
+    max-width: 200px;  /* Define el tamaño MÁXIMO deseado para la imagen en la modal */
+    height: auto;  
+}
