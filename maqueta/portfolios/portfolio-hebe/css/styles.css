@@ -1,0 +1,72 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+    background-color: #ececec; 
+    color: #333;
+}
+
+
+/* Header */
+header {
+    background-color: #444; 
+    color: #f8c038; 
+    padding: 20px;
+    text-align: center;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+
+nav ul li a {
+    color: #f8c038;
+    text-decoration: none;
+}
+
+
+/* Secciones */
+main {
+    padding: 20px;
+}
+
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+  background-color: #fff; /* Blanco */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 100, 150, 0.2);
+}
+
+
+/* Proyectos */
+.proyecto {
+    border-left: 4px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+

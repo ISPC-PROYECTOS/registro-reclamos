@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="/maqueta/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/maqueta/portfolios/portfolio-victoria/styles.css" />
+
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">👋🏼 Bienvenido</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Mis proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección principio -->
+    <section class="principio py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="img/foto-perfil-1.png" class="rounded-circle img-fluid" alt="Mi foto" width="200" />
+                </div>
+                <div class="col-md-8">
+                    <h1 class="display-4 mb-3">Victoria Picco</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Sobre mí</h2>
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <p class="descripcion">
+                        👩🏽 Soy <strong>Victoria Picco</strong>, <em>Técnica Superior en Tecnologías de los
+                            Alimentos</em>
+                        y actualmente estudiante de <em>Técnico Superior en Desarrollo de Software</em>.
+                        <br /><br />📚 Me apasiona aprender constantemente y me entusiasma
+                        la idea de combinar mis dos mundos: la tecnología y la elaboración de cerveza artesanal.
+                        <br /><br />💻 Me interesa desarrollar soluciones innovadoras que optimicen y faciliten los
+                        procesos
+                        de producción y control en la industria alimentaria.
+                    </p>
+                </div>
+                <div class="col-lg-6 border-start ps-4 border-secondary-subtle">
+                    <p class="descripcion">
+                        🌱 Me considero una persona curiosa, perseverante y con muchas ganas de crecer.
+                        <br /><br />🔗 Disfruto trabajar en equipo, escuchar ideas diferentes y buscar formas creativas
+                        para
+                        resolver problemas.
+                        <br /><br />🎶 Fuera del ámbito profesional, valoro mucho el tiempo en familia, me encanta
+                        cocinar,
+                        viajar, ir a recitales y escuchar música.
+                        <br /><br />🙌🏽 Creo firmemente que la pasión y la constancia son las claves para marcar la
+                        diferencia, tanto en la vida como en el trabajo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Portafolio -->
+    <section id="portfolio" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Mis proyectos</h2>
+            <div class="row mt-5">
+                <!-- Proyecto 1 -->
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="img/simple-muebles.png" class="img-fluid" alt="Proyecto 1" />
+                        <div class="portfolio-caption p-3">
+                            <h4>Simple Muebles</h4>
+                            <p class="descripcion">
+                                Sitio web simple y funcional para una mueblería a medida,
+                                pensado para mostrar sus productos y facilitar el contacto con clientes.
+                                Desarrollado en HTML y CSS.
+                            </p>
+                            <a href="https://webpython-alpha.vercel.app/" target="_blank" rel="noopener noreferrer"
+                               aria-label="Ver proyecto Simple Muebles (se abre en nueva pestaña)">
+                                Ver proyecto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="img/broker.jpg" class="img-fluid" alt="Proyecto 2" />
+                        <div class="portfolio-caption p-3">
+                            <h4>Simulador de Broker de Acciones</h4>
+                            <p>
+                                Plataforma en consola para simular compra y venta de acciones en la Bolsa,
+                                con manejo de portafolio, cálculo de rendimiento y comisiones. Desarrollado en Python y
+                                MySQL.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="img/wowki.png" class="img-fluid" alt="Proyecto 3" />
+                        <div class="portfolio-caption p-3">
+                            <h4>Sistema de Alarma con ESP32 y Sensor de Movimiento</h4>
+                            <p>
+                                Proyecto IoT con ESP32 que detecta movimiento mediante un sensor PIR y activa un
+                                zumbador
+                                como alarma sonora. Además, envía notificaciones al usuario para alertar sobre la
+                                detección.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Contacto</h2>
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 text-center">
+                    <p>📧 
+                        <a href="mailto:victoriampicco@gmail.com" target="_blank" rel="noopener noreferrer"
+                           aria-label="Enviar un correo (se abre en nueva pestaña)">
+                            Enviar un correo
+                        </a>
+                    </p>
+                    <p>🔗 
+                        <a href="https://www.linkedin.com/in/victoria-picco/" target="_blank" rel="noopener noreferrer"
+                           aria-label="Visitar mi LinkedIn (se abre en nueva pestaña)">
+                            Visitar mi LinkedIn
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <small>© 2025 Victoria Picco</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

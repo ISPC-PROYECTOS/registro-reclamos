@@ -1,77 +1,51 @@
 /* Estructura principal */
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
     background-color: #cbdad5;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
 }
-.contenido-principal {
+/*.contenido-principal {
     flex: 1;
-    padding-top: 60px; /* Espacio para la navbar fija ya que traía problemas al mostrar contenido*/
-    padding-bottom: 60px; /* Espacio para el footer */
+    padding-top: 60px; 
+    padding-bottom: 60px; 
     width: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 /* Navbar */
 nav{
-    display: flex;
-    justify-content: center;
-    width: 100%;
     background-color: #566981;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
 }
 .nav-logo img{
-    display: block;
-    width: 4.4em;
-    height: auto;
+    width: 40px;
 }
-nav ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+
 nav ul li{
-    display: inline-block;
-    padding: 25px;
+    padding: 10px;
 }
-nav ul li a{
+.nav-link{
     color: #cbdad5;
-    text-decoration: none;
     font-size: 18px;
-    font-weight: bold;
 }
-nav ul li:hover{
-    background-color: #3a415a;
+
+.nav-link:hover{
+    color: #3a415a
 }
 
 /* Footer */
 footer{
     background-color: #566981;
     color: #cbdad5;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    margin-top: auto;
-    z-index: 1000;
-    font-size: 14px;
 }
 footer a{
     color: #cbdad5;
@@ -84,11 +58,8 @@ footer a:hover{
 /* Formularios */
 .formulario{
     color: #cbdad5;
-    max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
     text-align: center;
-    box-sizing: border-box;
 }
 .formulario img{
     width: 15em;
@@ -115,17 +86,14 @@ footer a:hover{
 .formulario input[type="email"],
 .formulario input[type="text"],
 .formulario input[type="password"]{
-    width: 100%;
     padding: 10px;
     margin: 5px 0;
     border: none;
     border-radius: 5px;
     background-color: #566981;
     color: #cbdad5;
-    box-sizing: border-box;
 }
 .formulario button[type="submit"]{
-    width: 100%;
     padding: 10px;
     margin: 5px 0;
     border: none;
@@ -137,68 +105,34 @@ footer a:hover{
     cursor: pointer;
     transition: background-color 0.3s ease;
     box-sizing: border-box;
-    display: block;
 }
 .formulario button[type="submit"]:hover {
     background-color: #3a415a;
 }
 .formulario label{
     color: #566981;
-    font-size: 18px;
     font-weight: bold;
 }
 .formulario h3 {
     color: #566981;
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 .boton-registro {
     margin-top: 10px;
 }
-
-.formulario-registro {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: left;
-}
-
-.campo-formulario {
-    width: 48%;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-}
-
 /* Dashboard agente */
 .bienvenida-agente {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-    padding: 10px 10px;
     color: #3a415a;
     background-color: #cbdad5;
-}
-
-.boton-reclamos {
-    margin-left: auto;
-    padding: 8px 12px;
-    background-color: #34344e;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
 }
 
-.tabla-reclamos  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #3a415a;
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 10px;
+.boton-reclamos {
+    background-color: #34344e;
+    color: white;
+    border: #34344e;
 }
 
 .tabla-reclamos th{
@@ -219,31 +153,21 @@ footer a:hover{
 .boton-atender{
     background-color: #34344e;
     color: white;
-    font-weight: bold;
     border: none;
-    padding: 6px 10px;
-    border-radius: 5px;   
-    text-decoration: none; 
-    display: inline-block;    
 }
 
-.formulario-agente {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.formulario-agente{
+    background: white;
 }
 
-.formulario-agente h3{
-    text-align: center;
+.formulario-agente h3, .tabla-reclamos h3{
     color: #3a415a;
 }
 
 .boton-guardar{
-    padding: 10px;
     background-color: #34344e;
     color: white;
     border: none;
-    border-radius: 5px;
 }
 
 .boton-reclamos:hover,
@@ -262,8 +186,7 @@ footer a:hover{
     background-position: center;
     background-repeat: repeat;
     height: 100%;
-    margin-top: 50px;
-    padding: 20px;
+    padding: 0;
 }
 
 .sobre-nosotros {
