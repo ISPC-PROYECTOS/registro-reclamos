@@ -1,10 +1,31 @@
 # Práctica Profesionalizante I
 
-## Proyecto: Registro de reclamos internos
+## Proyecto: **Gestor de Reclamos Internos**
 
-### Integrantes:
-* Marchisone, Jorge - Scrum Master [jmarchisone](https://github.com/jmarchisone)
-* Barrera, Lautaro - Developer [LautyR2D2](https://github.com/LautyR2D2)
-* Pereyra, Hebe - Developer [PereyraHebe](https://github.com/PereyraHebe)
-* Picco, Victoria - Developer [vickpicco](https://github.com/vickpicco) 
-* Suárez, Mariela - Developer [MarielarosaSZ](https://github.com/MarielarosaSZ)
+### 📌 Descripción
+
+Este proyecto tiene como finalidad el desarrollo de un sistema digital destinado a registrar, gestionar y dar seguimiento a los reclamos internos dentro de una organización. El sistema busca optimizar la comunicación entre los usuarios y el área de sistemas, mejorar la trazabilidad de los casos reportados y garantizar una resolución eficiente de los mismos.
+
+### 🎯 Objetivos
+
+- Facilitar el ingreso y clasificación de reclamos internos.
+- Brindar visibilidad del estado de cada reclamo en tiempo real.
+- Generar reportes periódicos para la mejora continua de procesos.
+- Asegurar un entorno accesible y fácil de usar para todos los empleados.
+
+### 👥 Equipo de trabajo
+
+- **Jorge Marchisone** – *Scrum Master*  
+  [@jmarchisone](https://github.com/jmarchisone)
+
+- **Lautaro Barrera** – *Desarrollador*  
+  [@LautyR2D2](https://github.com/LautyR2D2)
+
+- **Hebe Pereyra** – *Desarrolladora*  
+  [@PereyraHebe](https://github.com/PereyraHebe)
+
+- **Victoria Picco** – *Desarrolladora*  
+  [@vickpicco](https://github.com/vickpicco)
+
+- **Mariela Suárez** – *Desarrolladora*  
+  [@MarielarosaSZ](https://github.com/MarielarosaSZ)
