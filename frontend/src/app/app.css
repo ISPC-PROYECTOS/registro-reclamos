@@ -1,0 +1,12 @@
+html, body {
+    background-color: #cbdad5;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
