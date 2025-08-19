@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-pagina404',
   imports: [RouterLink],
-  templateUrl: './header.html',
-  styleUrl: './header.css'
+  templateUrl: './pagina404.html',
+  styleUrl: './pagina404.css'
 })
-export class Header {
+export class Pagina404 {
 
 }
