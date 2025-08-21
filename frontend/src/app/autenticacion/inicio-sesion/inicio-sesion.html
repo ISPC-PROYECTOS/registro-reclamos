@@ -6,12 +6,35 @@
           <div class="col-lg-6">
             <label for="username" class="form-label">Usuario(Email):</label>
             <input type="email" formControlName="email" class="form-control" id="username" name="username" required />
+            <div>  
+                @if (Email?.errors && Email?.touched) {
+                    @if (Email?.hasError('required')){
+                        <p class="text-danger">
+                        El email es requerido.
+                        </p>
+                    }
+                    @else if (Email?.hasError('email')){
+                        <p class="text-danger">
+                        El formato del email debe ser válido.
+                        </p>
+                    }
+                }
+            </div>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <label for="password" class="form-label">Contraseña:</label><br />
             <input type="password" formControlName="password" class="form-control" id="password" name="password" required />
+            <div>  
+                @if (Password?.errors && Password?.touched) {
+                    @if (Password?.hasError('required')){
+                        <p class="text-danger">
+                        El password es requerido.
+                        </p>
+                    }
+                }
+            </div>
           </div>
         </div>
         <br />

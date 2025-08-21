@@ -17,7 +17,22 @@ export class InicioSesion {
       }
     )
   }
+
   onEnviar(event:Event){
     console.log(this.form.value)
+    event.preventDefault;
+    if (this.form.valid){
+      alert ("Enviar al servidor...")
+    }
+    else{
+      this.form.markAllAsTouched();
+    }
+  }
+
+  get Email(){
+    return this.form.get("email");
+  }
+  get Password(){
+    return this.form.get("password");
   }
 }
