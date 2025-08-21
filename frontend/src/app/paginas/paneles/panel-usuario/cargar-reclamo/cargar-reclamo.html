@@ -1,1 +1,26 @@
-<p>cargar-reclamo works!</p>
+<div class="container-fluid flex-grow-1">
+    <div class="formulario formulario-reclamo">
+      <img src="imagenes/gri-full-logo.png" alt="Logo GRI" class="logo-gri img-fluid" />
+      <br />
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+        <div class="campo-formulario campo-completo">
+          <label for="descripcion">Descripción del Reclamo:</label><br />
+          <textarea id="descripcion" formControlName="descripcion" rows="4"></textarea>
+        </div>
+  
+        <div class="campo-formulario campo-completo">
+          <label for="prioridad">Prioridad:</label><br />
+          <select id="prioridad" formControlName="prioridad">
+            <option value="">Seleccione una opción</option>
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+          </select>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+          Enviar Reclamo
+        </button>
+      </form>
+    </div>
+  </div>
