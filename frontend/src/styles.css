@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    background-color: #cbdad5;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
