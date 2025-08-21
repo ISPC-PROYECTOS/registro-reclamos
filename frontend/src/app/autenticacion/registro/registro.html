@@ -1,46 +1,117 @@
 <div class="container-fluid">
-<div class="formulario">
-  <img src="gri-full-logo.png" alt="Logo GRI" class="logo-gri" />
-  <br />
-  <form [formGroup]="form" (ngSubmit)="onEnviar($event)"> 
-    <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <label for="nombre" class="form-label">Nombre:</label><br />
-        <input type="text" formControlName="nombre" class="form-control" id="nombre" name="nombre" required />
-      </div>
-      <div class="col-lg-6">
-        <label for="apellido" class="form-label">Apellido:</label><br />
-        <input type="text" formControlName="apellido" class="form-control" id="apellido" name="apellido" required />
-      </div>
-      <div class="col-lg-6">
-        <label for="dni" class="form-label">DNI:</label><br />
-        <input type="text" formControlName="dni" class="form-control" id="dni" name="dni" required />
-      </div>
-      <div class="col-lg-6">
-        <label for="username" class="form-label">Usuario(Email):</label><br />
-        <input type="email" formControlName="email" class="form-control" id="username" name="username" required />
-      </div>
-      <div class="col-lg-6">
-        <label for="password" class="form-label">Contraseña:</label><br />
-        <input type="password" formControlName="password" class="form-control" id="password" name="password" required />
-      </div>
-      <div class="col-lg-6">
-        <label for="confirm-password" class="form-label">Confirmar Contraseña:</label><br />
-        <input
-          type="password"
-          class="form-control"
-          id="confirm-password"
-          name="confirm-password"
-          required
-        />
-      </div>
+    <div class="formulario">
+        <img src="gri-full-logo.png" alt="Logo GRI" class="logo-gri" />
+        <br />
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <label for="nombre" class="form-label">Nombre:</label><br />
+                    <input type="text" formControlName="nombre" class="form-control" id="nombre" name="nombre"
+                        required />
+                    @if (Nombre?.errors && Nombre?.touched) { 
+                        @if (Nombre?.hasError('required')) 
+                    { 
+                        <p class="text-danger"> 
+                            El nombre es requerido. 
+                        </p> 
+                    } 
+                } 
+                </div>
+                <div class="col-lg-6">
+                    <label for="apellido" class="form-label">Apellido:</label><br />
+                    <input type="text" formControlName="apellido" class="form-control" id="apellido" name="apellido"
+                        required />
+                    @if (Apellido?.errors && Apellido?.touched) { 
+                        @if (Apellido?.hasError('required')) 
+                    { 
+                        <p class="text-danger"> 
+                            El apellido es requerido. 
+                        </p> 
+                    } 
+                }
+                </div>
+                <div class="col-lg-6">
+                    <label for="dni" class="form-label">DNI:</label><br />
+                    <input type="text" formControlName="dni" class="form-control" id="dni" name="dni" required />
+                    @if (Dni?.errors && Dni?.touched) { 
+                        @if (Dni?.hasError('required')) 
+                    { 
+                        <p class="text-danger"> 
+                            El DNI es requerido. 
+                        </p> 
+                    } 
+                    @else if (Dni?.hasError('minlength')) 
+                    { 
+                        <p class="text-danger"> 
+                            El DNI debe tener al menos 7 carácteres. 
+                        </p> 
+                    } 
+                } 
+                </div>
+                <div class="col-lg-6">
+                    <label for="username" class="form-label">Usuario (Email):</label><br />
+                    <input type="email" formControlName="email" class="form-control" id="username" name="username"
+                        required />
+                        @if (Email?.errors && Email?.touched) { 
+                            @if (Email?.hasError('required')) 
+                       { 
+                           <p class="text-danger"> 
+                               El email es requerido. 
+                           </p> 
+                       } 
+                       @else if (Email?.hasError('email')) 
+                       { 
+                           <p class="text-danger"> 
+                               El formato del email debe ser válido. 
+                             </p> 
+                       } 
+                   } 
+                </div>
+                <div class="col-lg-6">
+                    <label for="password" class="form-label">Contraseña:</label><br />
+                    <input type="password" formControlName="password" class="form-control" id="password" name="password"
+                        required />
+                    @if (Password?.errors && Password?.touched) { 
+                        @if (Password?.hasError('required')) 
+                    { 
+                        <p class="text-danger"> 
+                            La contraseña es requerida. 
+                        </p> 
+                    } 
+                    @else if (Password?.hasError('minlength')) 
+                    { 
+                        <p class="text-danger"> 
+                            La contraseña debe tener al menos 7 carácteres. 
+                        </p> 
+                    } 
+                } 
+                </div>
+                <div class="col-lg-6">
+                    <label for="confirm-password" class="form-label">Confirmar Contraseña:</label><br />
+                    <input type="password" formControlName="confirmPassword" class="form-control" id="confirm-password"
+                        name="confirm-password" required />
+                    @if (ConfirmPassword?.errors && ConfirmPassword?.touched) { 
+                        @if (ConfirmPassword?.hasError('required')) 
+                    { 
+                        <p class="text-danger"> 
+                            La confirmación de contraseña es requerida. 
+                        </p> 
+                    } 
+                    @else if (ConfirmPassword?.hasError('minlength')) 
+                    { 
+                        <p class="text-danger"> 
+                            La contraseña debe tener al menos 7 carácteres. 
+                        </p> 
+                    } 
+                }
+                </div>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+        <h3>¿Ya tienes cuenta?</h3>
+        <p class="boton-registro">
+            <a href="index.html">Iniciar sesión aquí</a>
+        </p>
     </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Registrarse</button>
-  </form>
-  <h3>¿Ya tienes cuenta?</h3>
-  <p class="boton-registro">
-    <a href="index.html">Iniciar sesión aquí</a>
-  </p>
-</div>
 </div>
