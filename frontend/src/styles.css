@@ -4,8 +4,76 @@ html, body {
 
 body {
     font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
+}
+
+.formulario{
+    color: #cbdad5;
+    padding: 20px;
+    text-align: center;
+}
+.formulario img{
+    width: 15em;
+    height: auto;
+    margin-bottom: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.formulario a{
+    color: #cbdad5;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #566981;
+    transition: background-color 0.3s ease;
+}
+.formulario a:hover{
+    background-color: #cbdad5;
+    color: #566981;
+}
+.formulario input[type="email"],
+.formulario input[type="text"],
+.formulario input[type="password"]{
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #566981;
+    color: #cbdad5;
+}
+.formulario button[type="submit"]{
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #566981;
+    color: #cbdad5;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+.formulario button[type="submit"]:hover {
+    background-color: #3a415a;
+}
+.formulario label{
+    color: #566981;
+    font-weight: bold;
+}
+.formulario h3 {
+    color: #566981;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.boton-registro {
+    margin-top: 10px;
 }

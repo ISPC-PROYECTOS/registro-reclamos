@@ -1,1 +1,25 @@
-<p>inicio-sesion works!</p>
+<div class="container-fluid">
+    <div class="formulario">
+      <img src="gri-full-logo.png" alt="Logo GRI" class="logo-gri"/>
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <label for="username" class="form-label">Usuario(Email):</label>
+            <input type="email" formControlName="email" class="form-control" id="username" name="username" required />
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <label for="password" class="form-label">Contraseña:</label><br />
+            <input type="password" formControlName="password" class="form-control" id="password" name="password" required />
+          </div>
+        </div>
+        <br />
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+      </form>
+      <h3>¿No tienes cuenta?</h3>
+      <p class="boton-registro">
+        <a href="registro.html">Regístrate aquí</a>
+      </p>
+    </div>
+  </div>
