@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row justify-content-center">
+      @for (profesional of profesionalList; track profesional.id) {
+    
+        <div class="col">
+          <div class="card h-100 d-flex flex-column justify-content-between"> 
+            <img [src]="profesional.photo" class="card-img-top" alt="{{ profesional.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ profesional.name }}</h5>
+              <p class="card-text">{{ profesional.perfil }}</p>
+              <a href="#" class="btn btn-primary">
+                Ver Portafolio
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  

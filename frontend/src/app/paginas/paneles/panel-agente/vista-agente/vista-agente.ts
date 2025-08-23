@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-
 @Component({
-  selector: 'app-cargar-reclamo',
+  selector: 'app-vista-agente',
   imports: [ReactiveFormsModule],
-  templateUrl: './cargar-reclamo.html',
-  styleUrl: './cargar-reclamo.css'
+  templateUrl: './vista-agente.html',
+  styleUrl: './vista-agente.css'
 })
-export class CargarReclamo {
+export class VistaAgente {
   form!: FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
-      descripcion: ['', Validators.required],
-      prioridad: ['', Validators.required]
+      estado: ['', Validators.required],
+      acciones: ['', Validators.required]
     });
   }
 
@@ -27,11 +26,11 @@ export class CargarReclamo {
     }
   }
 
-  get Descripcion() {
-    return this.form.get('descripcion');
+  get Estado() {
+    return this.form.get('estado');
   }
   
-  get Prioridad() {
-    return this.form.get('prioridad');
+  get Acciones() {
+    return this.form.get('acciones');
   }
 }
