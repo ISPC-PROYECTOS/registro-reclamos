@@ -2,8 +2,8 @@
     <div class="row justify-content-center">
       @for (profesional of profesionalList; track profesional.id) {
     
-        <div class="col breakpoints-2">
-          <div class="card" style="width: 100%;"> 
+        <div class="col">
+          <div class="card h-100 d-flex flex-column justify-content-between"> 
             <img [src]="profesional.photo" class="card-img-top" alt="{{ profesional.name }}">
             <div class="card-body">
               <h5 class="card-title">{{ profesional.name }}</h5>

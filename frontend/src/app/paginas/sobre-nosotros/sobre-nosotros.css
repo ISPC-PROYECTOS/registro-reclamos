@@ -1,11 +1,12 @@
-.container-sobre-nosotros {
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh; 
-    background-color: #e0e5e9; 
     color: #3a415a; 
-    font-family: sans-serif; 
+    font-family: sans-serif;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   
   .card {
