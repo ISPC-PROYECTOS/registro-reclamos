@@ -10,7 +10,13 @@
             @if (Descripcion?.hasError('required')) {
               <p class="text-danger">La descripción del reclamo es requerida.</p>
             }
-          }
+            @else if (Descripcion?.hasError('minlength')) {
+              <p class="text-danger">La descripción del reclamo debe tener al menos 8 caracteres.</p>
+            }
+            @else if (Descripcion?.hasError('maxlength')) {
+              <p class="text-danger">La descripción del reclamo no debe exceder los 300 caracteres.</p>
+            }
+          }         
         </div>
 
         <div class="campo-formulario campo-completo">

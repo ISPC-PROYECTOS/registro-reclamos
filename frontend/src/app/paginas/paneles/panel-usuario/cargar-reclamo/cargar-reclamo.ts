@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -12,7 +13,7 @@ export class CargarReclamo {
   form!: FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
-      descripcion: ['', Validators.required],
+      descripcion: ['', [Validators.required, Validators.minLength(8),Validators.maxLength(300)]],
       prioridad: ['', Validators.required]
     });
   }
