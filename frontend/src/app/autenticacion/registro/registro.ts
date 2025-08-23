@@ -14,7 +14,7 @@ export class Registro {
       {
       nombre:['',[Validators.required]],
       apellido:['',[Validators.required]],
-      dni:['',[Validators.required, Validators.minLength(7)]],
+      dni:['',[Validators.required, Validators.minLength(7), Validators.maxLength(8)]],
       email:['',[Validators.required, Validators.email]],
       password:['',[Validators.required, Validators.minLength(7)]],
       confirmPassword:['',[Validators.required]],
@@ -22,9 +22,18 @@ export class Registro {
     )
   }
 
-  onEnviar(event:Event) 
+  onEnviar(event: Event) 
   { 
-    console.log(this.form.value) 
+  console.log(this.form.value) 
+    event.preventDefault;  
+    if (this.form.valid) 
+    { 
+      alert ("Enviar al servidor...") 
+    } 
+    else 
+    {           
+      this.form.markAllAsTouched();  
+    } 
   } 
 
   get Nombre() 
@@ -56,4 +65,14 @@ export class Registro {
   { 
     return this.form.get("confirmPassword"); 
   } 
+
+  confirmarPassword(event:Event) 
+  { 
+    const password = this.form.get('password')?.value; 
+    const confirmPassword = this.form.get('confirmPassword')?.value;
+    if (password !== confirmPassword) 
+    {  
+      this.form.get('confirmPassword')?.setErrors({ 'noCoinciden': true }); 
+    }
+  }
 }

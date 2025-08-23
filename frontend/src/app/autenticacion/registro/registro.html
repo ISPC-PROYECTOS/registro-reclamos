@@ -45,8 +45,14 @@
                         <p class="text-danger"> 
                             El DNI debe tener al menos 7 carácteres. 
                         </p> 
+                    }
+                    @else if (Dni?.hasError('maxlength')) 
+                    { 
+                        <p class="text-danger"> 
+                            El DNI debe tener como máximo 8 carácteres. 
+                        </p> 
                     } 
-                } 
+                }
                 </div>
                 <div class="col-lg-6">
                     <label for="username" class="form-label">Usuario (Email):</label><br />
@@ -89,21 +95,17 @@
                 <div class="col-lg-6">
                     <label for="confirm-password" class="form-label">Confirmar Contraseña:</label><br />
                     <input type="password" formControlName="confirmPassword" class="form-control" id="confirm-password"
-                        name="confirm-password" required />
-                    @if (ConfirmPassword?.errors && ConfirmPassword?.touched) { 
-                        @if (ConfirmPassword?.hasError('required')) 
-                    { 
-                        <p class="text-danger"> 
-                            La confirmación de contraseña es requerida. 
-                        </p> 
-                    } 
-                    @else if (ConfirmPassword?.hasError('minlength')) 
-                    { 
-                        <p class="text-danger"> 
-                            La contraseña debe tener al menos 7 carácteres. 
-                        </p> 
-                    } 
-                }
+                        name="confirm-password" required (input)="confirmarPassword($event)" />
+                        @if (ConfirmPassword?.errors && ConfirmPassword?.touched) { 
+                      
+                          @if (ConfirmPassword?.hasError('required')) {
+                            <p class="text-danger">La confirmación de contraseña es requerida.</p>
+                          }
+                      
+                          @if (ConfirmPassword?.hasError('noCoinciden')) {
+                            <p class="text-danger">Las contraseñas no coinciden.</p>
+                          }
+                        }
                 </div>
             </div>
             <br />
