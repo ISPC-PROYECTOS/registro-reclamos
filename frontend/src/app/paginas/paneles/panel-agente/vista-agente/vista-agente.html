@@ -72,19 +72,29 @@
 
         <!-- Formulario de atención -->
         <section id="form-atencion" class="container mt-3 mb-3">
-            <form class="formulario-agente p-3 border rounded shadow" method="post">
+            <form class="formulario-agente p-3 border rounded shadow" [formGroup]="form" (ngSubmit)="onEnviar($event)">
                 <h3 class="m-2 text-center">Atender reclamo</h3>
                 <div class="mb-3">
                     <label for="estado" class="form-label">Nuevo estado:</label>
-                    <select id="estado" name="estado" class="form-select">
+                    <select id="estado" formControlName="estado" class="form-select">
                         <option value="recibido">Recibido</option>
                         <option value="en-proceso">En proceso</option>
                         <option value="resuelto">Resuelto</option>
                     </select>
+                    @if (Estado?.errors && Estado?.touched) {
+                        @if (Estado?.hasError('required')) {
+                          <p class="text-danger">El estado del reclamo es requerido.</p>
+                        }
+                      }
                 </div>
                 <div class="mb-3">
                     <label for="acciones" class="form-label">Acciones realizadas:</label>
-                    <textarea id="acciones" name="acciones" class="form-control" rows="4" placeholder="Detalla las acciones..." required></textarea>
+                    <textarea id="acciones" formControlName="acciones" class="form-control" rows="4" placeholder="Detalla las acciones..." required></textarea>
+                    @if (Acciones?.errors && Acciones?.touched) {
+                        @if (Acciones?.hasError('required')) {
+                          <p class="text-danger">La acción realizada es requerida.</p>
+                        }
+                      }
                 </div>
                 <div class="d-grid">
                     <button type="submit" class="btn btn-success boton-guardar">Guardar</button>
