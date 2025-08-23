@@ -77,3 +77,7 @@ h1, h2, h3 {
 .boton-registro {
     margin-top: 10px;
 }
+.boton-registro:hover{
+    color: #566981;
+    cursor: pointer;
+}

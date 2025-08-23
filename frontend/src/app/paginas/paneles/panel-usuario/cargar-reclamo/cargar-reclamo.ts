@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 @Component({
   selector: 'app-cargar-reclamo',
-  standalone: true, // Esto indica que el componente no pertenece a un NgModule
   imports: [ReactiveFormsModule],
   templateUrl: './cargar-reclamo.html',
   styleUrl: './cargar-reclamo.css'
