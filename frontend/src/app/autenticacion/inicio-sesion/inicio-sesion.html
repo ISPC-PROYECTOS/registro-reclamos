@@ -4,7 +4,7 @@
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <label for="username" class="form-label">Usuario(Email):</label>
+            <label for="username" class="form-label">Usuario (Email):</label>
             <input type="email" formControlName="email" class="form-control" id="username" name="username" required />
             <div>  
                 @if (Email?.errors && Email?.touched) {

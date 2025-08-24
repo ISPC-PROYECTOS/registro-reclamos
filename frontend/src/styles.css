@@ -81,3 +81,58 @@ h1, h2, h3 {
     color: #566981;
     cursor: pointer;
 }
+
+.bienvenida-agente {
+    color: #3a415a;
+    background-color: #cbdad5;
+    font-weight: bold;
+}
+
+.boton-reclamos {
+    background-color: #34344e;
+    color: white;
+    border: #34344e;
+}
+
+.tabla-reclamos th{
+    background-color: #566981;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.tabla-reclamos td{
+    border-top: 1px #3a415a solid;
+    padding: 10px;
+}
+
+.boton-atender{
+    background-color: #34344e;
+    color: white;
+    border: none;
+}
+
+.formulario-agente{
+    background: white;
+}
+
+.formulario-agente h3, .tabla-reclamos h3{
+    color: #3a415a;
+}
+
+.boton-guardar{
+    background-color: #34344e;
+    color: white;
+    border: none;
+}
+
+.boton-reclamos:hover,
+.boton-atender:hover,
+.boton-guardar:hover {
+    background-color: #89a7b1;
+    color: #34344e;
+    cursor: pointer;
+}
