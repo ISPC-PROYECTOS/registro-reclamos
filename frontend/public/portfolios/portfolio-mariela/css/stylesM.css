@@ -1,0 +1,89 @@
+
+.body {
+            padding-top: 51px !important; /* Espacio para la barra de navegación fija */
+        }
+.section-padding {
+            padding: 80px 0;
+        }
+.navbar-inverse {
+    background-color: #570a85;
+    border-color: #080808;
+}
+
+.bg-light-gray {
+            background-color: #9d54e2;
+        }
+.portfolio-item {
+            margin-bottom: 30px;
+        }
+.service-item {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+.service-item .glyphicon {
+            font-size: 50px;
+            color: #337ab7; /* Color principal de Bootstrap */
+            margin-bottom: 15px;
+        }
+footer {
+            padding: 30px 0;
+            background-color: #333;
+            color: rgba(125, 62, 228, 0.938);
+            text-align: center;
+        }
+p {
+    font-family: "Playpen Sans Deva", cursive;
+    font-weight: 300; /* Ejemplo: peso ligero */
+}
+a {
+    font-family: "Playpen Sans Deva", cursive;      
+}
+
+
+.savate-titulo {
+  font-family: "Savate", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+.savate-subtitulo {
+  font-family: "Savate", sans-serif;
+  font-optical-sizing: auto;    
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(127, 34, 214);
+}
+.savate-texto {
+  font-family: "Savate", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.playpen-sans-deva-texto2> {
+  font-family: "Playpen Sans Deva", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.playpen-sans-deva-contacto {
+  font-family: "Playpen Sans Deva", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+  color: rgb(127, 34, 214);
+}
+
+.modal-content {
+   
+    background-color: #dcbce4; 
+    border: 3px solid #570a85;
+    border-radius: 6px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-img-small {
+    max-width: 200px;  /* Define el tamaño MÁXIMO deseado para la imagen en la modal */
+    height: auto;  
+}
