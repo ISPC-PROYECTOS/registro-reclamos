@@ -15,7 +15,7 @@ Este proyecto tiene como finalidad el desarrollo de un sistema digital destinado
 
 ### 👥 Equipo de trabajo
 
-- **Jorge Marchisone** – *Scrum Master*  
+- **Jorge Marchisone** – *Desarrollador*  
   [@jmarchisone](https://github.com/jmarchisone)
 
 - **Lautaro Barrera** – *Desarrollador*  
@@ -24,7 +24,7 @@ Este proyecto tiene como finalidad el desarrollo de un sistema digital destinado
 - **Hebe Pereyra** – *Desarrolladora*  
   [@PereyraHebe](https://github.com/PereyraHebe)
 
-- **Victoria Picco** – *Desarrolladora*  
+- **Victoria Picco** – *Scrum Master*  
   [@vickpicco](https://github.com/vickpicco)
 
 - **Mariela Suárez** – *Desarrolladora*  
