@@ -1,0 +1,12 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Admin",
+            "apellido": "Sistema",
+            "area": "Gerencia",
+            "email": "admin@gri.com",
+            "password": "admingri"
+        }
+    ]
+}
