@@ -9,13 +9,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './registro.css'
 })
 export class Registro {
-  form!:FormGroup;
+  form:FormGroup;
   constructor(private formBuilder: FormBuilder){ 
     this.form=this.formBuilder.group(
       {
       nombre:['',[Validators.required]],
       apellido:['',[Validators.required]],
-      dni:['',[Validators.required, Validators.minLength(7), Validators.maxLength(8)]],
+      area:['',[Validators.required]],
       email:['',[Validators.required, Validators.email]],
       password:['',[Validators.required, Validators.minLength(7)]],
       confirmPassword:['',[Validators.required]],
@@ -47,9 +47,9 @@ export class Registro {
     return this.form.get("apellido"); 
   } 
 
-  get Dni() 
+  get Area() 
   { 
-    return this.form.get("dni"); 
+    return this.form.get("area"); 
   } 
   
   get Email() 

@@ -31,27 +31,19 @@
                 }
                 </div>
                 <div class="col-lg-6">
-                    <label for="dni" class="form-label">DNI:</label><br />
-                    <input type="text" formControlName="dni" class="form-control" id="dni" name="dni" required />
-                    @if (Dni?.errors && Dni?.touched) { 
-                        @if (Dni?.hasError('required')) 
-                    { 
-                        <p class="text-danger"> 
-                            El DNI es requerido. 
-                        </p> 
-                    } 
-                    @else if (Dni?.hasError('minlength')) 
-                    { 
-                        <p class="text-danger"> 
-                            El DNI debe tener al menos 7 carácteres. 
-                        </p> 
+                  <label for="area" class="form-label">Área:</label><br />
+                  <select formControlName="area" class="form-select" id="area" name="area" required>
+                    <option value="administracion">Administración</option>
+                    <option value="gerencia">Gerencia</option>
+                    <option value="ventas">Ventas</option>
+                  </select>
+                   @if (Area?.errors && Area?.touched) {
+                        @if (Area?.hasError('required'))
+                    {
+                        <p class="text-danger">
+                            El área es requerida.
+                        </p>
                     }
-                    @else if (Dni?.hasError('maxlength')) 
-                    { 
-                        <p class="text-danger"> 
-                            El DNI debe tener como máximo 8 carácteres. 
-                        </p> 
-                    } 
                 }
                 </div>
                 <div class="col-lg-6">

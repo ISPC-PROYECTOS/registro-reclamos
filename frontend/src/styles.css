@@ -40,7 +40,8 @@ h1, h2, h3 {
 }
 .formulario input[type="email"],
 .formulario input[type="text"],
-.formulario input[type="password"]{
+.formulario input[type="password"],
+.formulario select{
     padding: 10px;
     margin: 5px 0;
     border: none;
