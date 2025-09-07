@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { QuienesSomosService } from '../../services/quienes-somos.service';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-sobre-nosotros',
@@ -15,7 +16,13 @@ export class SobreNosotros implements OnInit{
 
   }
   ngOnInit(): void {
-    this.profesionalList = this.quienesSomosService.obtenerProfecionales();
+    this.quienesSomosService.obtenerProfecionales() .subscribe({
+      next: (data) => {console.log(data);
+        this.profesionalList=data["quienes_somos"];
+      },
+      error: (error) => console.error(error),
+      complete: () => console.info('complete')
+    });
     
     throw new Error('Method not implemented.');
   }
