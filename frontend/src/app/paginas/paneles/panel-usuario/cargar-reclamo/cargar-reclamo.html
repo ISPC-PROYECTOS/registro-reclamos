@@ -2,6 +2,14 @@
     <div class="formulario formulario-reclamo">
       <img src="gri-full-logo.png" alt="Logo GRI" class="logo-gri img-fluid" />
       <br />
+
+     <!-- Contenedor para mostrar el mensaje de éxito o error -->
+      @if (formMessage) {
+        <div [ngClass]="{'alert alert-success': formMessage.includes('exitosamente'), 'alert alert-danger': !formMessage.includes('exitosamente')}">
+         {{ formMessage }}
+        </div>
+        }
+
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
         <div class="campo-formulario campo-completo">
           <label for="descripcion">Descripción del reclamo:</label><br />

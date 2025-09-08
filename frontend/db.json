@@ -1,15 +1,24 @@
 {
-    "usuarios": [
-        {
-            "id": 1,
-            "nombre": "Admin",
-            "apellido": "Sistema",
-            "area": "Gerencia",
-            "email": "admin@gri.com",
-            "password": "admingri",
-            "rol": "agente"
-        }
-    ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Admin",
+      "apellido": "Sistema",
+      "area": "Gerencia",
+      "email": "admin@gri.com",
+      "password": "admingri",
+      "rol": "agente"
+    },
+    {
+      "id": "4531",
+      "nombre": "Juan",
+      "apellido": "Perez",
+      "area": "administracion",
+      "email": "juanperez@gri.com",
+      "password": "admingri",
+      "rol": "usuario"
+    }
+  ],
   "reclamos": [
     {
       "id": "001",
@@ -34,6 +43,30 @@
       "estado": "Recibido",
       "descripcion": "Solicitud de cambio de mouse",
       "prioridad": "Baja"
+    },
+    {
+      "id": "a62b",
+      "usuario": "Usuario de prueba",
+      "fechaHora": "8/9/2025, 12:25:01",
+      "estado": "Recibido",
+      "descripcion": "Se trabó la impresora fiscal. Emite un pitido intermitente.",
+      "prioridad": "alta"
+    },
+    {
+      "id": "7f8a",
+      "usuario": "Usuario de prueba",
+      "fechaHora": "8/9/2025, 12:39:38",
+      "estado": "Recibido",
+      "descripcion": "La pc esta muy lenta, y corta la conexión al wifi.",
+      "prioridad": "media"
+    },
+    {
+      "id": "a678",
+      "usuario": "Usuario de prueba",
+      "fechaHora": "8/9/2025, 12:43:15",
+      "estado": "Recibido",
+      "descripcion": "Se corto la luz, y al volver, no anda el teclado de la pc.",
+      "prioridad": "alta"
     }
   ]
 }
