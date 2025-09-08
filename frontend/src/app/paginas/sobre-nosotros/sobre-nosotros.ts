@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { QuienesSomosService } from '../../services/quienes-somos.service';
+import { QuienesSomosService } from '../../servicios/quienes-somos.service';
 import { Subscriber } from 'rxjs';
 
 @Component({
