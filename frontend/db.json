@@ -9,5 +9,31 @@
             "password": "admingri",
             "rol": "agente"
         }
-    ]
+    ],
+  "reclamos": [
+    {
+      "id": "001",
+      "usuario": "Juan Pérez",
+      "fechaHora": "13/05/2025 10:32",
+      "estado": "Recibido",
+      "descripcion": "Problema con servidor",
+      "prioridad": "Alta"
+    },
+    {
+      "id": "002",
+      "usuario": "Sandra Rodríguez",
+      "fechaHora": "13/05/2025 13:37",
+      "estado": "Recibido",
+      "descripcion": "Problema con impresora compartida",
+      "prioridad": "Media"
+    },
+    {
+      "id": "003",
+      "usuario": "Miguel Fernández",
+      "fechaHora": "13/05/2025 15:45",
+      "estado": "Recibido",
+      "descripcion": "Solicitud de cambio de mouse",
+      "prioridad": "Baja"
+    }
+  ]
 }
