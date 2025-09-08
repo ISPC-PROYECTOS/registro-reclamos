@@ -6,7 +6,8 @@
             "apellido": "Sistema",
             "area": "Gerencia",
             "email": "admin@gri.com",
-            "password": "admingri"
+            "password": "admingri",
+            "rol": "agente"
         }
     ]
 }

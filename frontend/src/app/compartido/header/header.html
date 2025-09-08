@@ -20,23 +20,45 @@
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/inicio-sesion">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="registro">Registro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/vista-usuario">
-                Dashboard Usuario</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/vista-agente">
-                Dashboard Agente</a>
-            </li>
+            <!-- Mostrar solo si NO está logueado -->
+            @if (!estaLogueado) {
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/inicio-sesion">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="registro">Registro</a>
+              </li>
+            }
+            
+            <!-- Mostrar solo si está logueado y es usuario o agente -->
+            @if (estaLogueado && (esUsuario || esAgente)) {
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/vista-usuario">
+                  Dashboard Usuario</a>
+              </li>
+            }
+            
+            <!-- Mostrar solo si está logueado y es agente -->
+            @if (estaLogueado && esAgente) {
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/vista-agente">
+                  Dashboard Agente</a>
+              </li>
+            }
+            
+            <!-- Mostrar siempre -->
             <li class="nav-item">
               <a class="nav-link" routerLink="/sobre-nosotros">Sobre Nosotros</a>
             </li>
+            
+            <!-- Mostrar solo si está logueado -->
+            @if (estaLogueado) {
+              <li class="nav-item">
+                <button class="nav-link btn btn-link" (click)="cerrarSesion()">
+                  Cerrar Sesión
+                </button>
+              </li>
+            }
           </ul>
         </div>
       </div>

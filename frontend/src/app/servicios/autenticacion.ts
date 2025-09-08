@@ -12,6 +12,7 @@ export interface Usuario {
   area: string;
   email: string;
   password: string;
+  rol: string;
 }
 
 @Injectable({
@@ -88,5 +89,19 @@ export class Autenticacion {
 
   estarLogueado(): boolean {
     return !!localStorage.getItem('usuarioActual');
+  }
+
+  obtenerUsuarioActual(): Usuario | null {
+    return this.usuarioActualSubject.value;
+  }
+
+  esAgente(): boolean {
+    const usuario = this.obtenerUsuarioActual();
+    return usuario?.rol === 'agente';
+  }
+
+  esUsuario(): boolean {
+    const usuario = this.obtenerUsuarioActual();
+    return usuario?.rol === 'usuario';
   }
 }

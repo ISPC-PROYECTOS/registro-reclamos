@@ -76,7 +76,8 @@ export class Registro {
         apellido: this.form.value.apellido,
         area: this.form.value.area,
         email: this.form.value.email,
-        password: this.form.value.password
+        password: this.form.value.password,
+        rol: 'usuario' //Rol prefijado al registrarse, se debe modificar luego desde la base de datos si es agente
       };
 
       this.autenticacion.registrarse(usuario).subscribe({
