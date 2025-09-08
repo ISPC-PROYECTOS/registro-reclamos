@@ -2,12 +2,20 @@
     <div class="formulario">
         <img src="gri-full-logo.png" alt="Logo GRI" class="logo-gri" />
         <br />
+        
+        <!-- Mostrar mensaje de error si existe -->
+        @if (mensajeError) {
+            <div class="alert alert-danger" role="alert">
+                {{ mensajeError }}
+            </div>
+        }
+        
         <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <label for="nombre" class="form-label">Nombre:</label><br />
                     <input type="text" formControlName="nombre" class="form-control" id="nombre" name="nombre"
-                        required />
+                        required [disabled]="estaCargando" />
                     @if (Nombre?.errors && Nombre?.touched) { 
                         @if (Nombre?.hasError('required')) 
                     { 
@@ -20,7 +28,7 @@
                 <div class="col-lg-6">
                     <label for="apellido" class="form-label">Apellido:</label><br />
                     <input type="text" formControlName="apellido" class="form-control" id="apellido" name="apellido"
-                        required />
+                        required [disabled]="estaCargando" />
                     @if (Apellido?.errors && Apellido?.touched) { 
                         @if (Apellido?.hasError('required')) 
                     { 
@@ -32,7 +40,8 @@
                 </div>
                 <div class="col-lg-6">
                   <label for="area" class="form-label">Área:</label><br />
-                  <select formControlName="area" class="form-select" id="area" name="area" required>
+                  <select formControlName="area" class="form-select" id="area" name="area" required [disabled]="estaCargando">
+                    <option value="">Selecciona un área</option>
                     <option value="administracion">Administración</option>
                     <option value="gerencia">Gerencia</option>
                     <option value="ventas">Ventas</option>
@@ -47,9 +56,16 @@
                 }
                 </div>
                 <div class="col-lg-6">
-                    <label for="username" class="form-label">Usuario (Email):</label><br />
+                    <label for="username" class="form-label">Usuario (Email):</label>
+                    @if (chequeandoEmail) {
+                        <span class="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>
+                        <small class="text-muted">Verificando...</small>
+                    }
+                    <br />
                     <input type="email" formControlName="email" class="form-control" id="username" name="username"
-                        required />
+                        required [disabled]="estaCargando" 
+                        [class.is-invalid]="Email?.errors && Email?.touched"
+                        [class.is-valid]="Email?.valid && Email?.touched && !chequeandoEmail" />
                         @if (Email?.errors && Email?.touched) { 
                             @if (Email?.hasError('required')) 
                        { 
@@ -62,13 +78,19 @@
                            <p class="text-danger"> 
                                El formato del email debe ser válido. 
                              </p> 
+                       }
+                       @else if (Email?.hasError('emailYaRegistrado')) 
+                       { 
+                           <p class="text-danger"> 
+                               Este email ya está registrado. 
+                             </p> 
                        } 
                    } 
                 </div>
                 <div class="col-lg-6">
                     <label for="password" class="form-label">Contraseña:</label><br />
                     <input type="password" formControlName="password" class="form-control" id="password" name="password"
-                        required />
+                        required [disabled]="estaCargando" />
                     @if (Password?.errors && Password?.touched) { 
                         @if (Password?.hasError('required')) 
                     { 
@@ -87,9 +109,9 @@
                 <div class="col-lg-6">
                     <label for="confirm-password" class="form-label">Confirmar Contraseña:</label><br />
                     <input type="password" formControlName="confirmPassword" class="form-control" id="confirm-password"
-                        name="confirm-password" required (input)="confirmarPassword($event)" />
-                        @if (ConfirmPassword?.errors && ConfirmPassword?.touched) { 
-                      
+                        name="confirm-password" required (input)="confirmarPassword($event)" [disabled]="estaCargando" />
+                        @if (ConfirmPassword?.errors && ConfirmPassword?.touched) {
+
                           @if (ConfirmPassword?.hasError('required')) {
                             <p class="text-danger">La confirmación de contraseña es requerida.</p>
                           }
@@ -101,7 +123,14 @@
                 </div>
             </div>
             <br />
-            <button type="submit" class="btn btn-primary">Registrarse</button>
+            <button type="submit" class="btn btn-primary" [disabled]="estaCargando || chequeandoEmail || form.invalid">
+                @if (estaCargando) {
+                    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    Registrando...
+                } @else {
+                    Registrarse
+                }
+            </button>
         </form>
         <h3>¿Ya tienes cuenta?</h3>
         <p class="boton-registro">
