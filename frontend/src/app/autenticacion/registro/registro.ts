@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AbstractControl, AsyncValidatorFn, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
-import { RouterLink, Router } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AsyncValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { Autenticacion, Usuario } from '../../servicios/autenticacion';
 import { Observable, of } from 'rxjs';
 import { map, catchError, debounceTime, switchMap } from 'rxjs/operators';
@@ -12,10 +12,12 @@ import { map, catchError, debounceTime, switchMap } from 'rxjs/operators';
   styleUrl: './registro.css'
 })
 export class Registro {
-  form:FormGroup;
+  form: FormGroup;
   estaCargando = false;
   mensajeError = '';
+  mensajeExito = '';
   chequeandoEmail = false;
+  registroExitoso = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -67,6 +69,7 @@ export class Registro {
     if (this.form.valid) {
       this.estaCargando = true;
       this.mensajeError = '';
+      this.mensajeExito = '';
 
       const usuario: Usuario = {
         nombre: this.form.value.nombre,
@@ -79,14 +82,21 @@ export class Registro {
       this.autenticacion.registrarse(usuario).subscribe({
         next: (usuarioRegistrado) => {
           this.estaCargando = false;
+          this.registroExitoso = true;
+          this.mensajeExito = `¡Registro exitoso! Bienvenido ${usuarioRegistrado.nombre}. Serás redirigido al inicio de sesión en unos segundos...`;
+          
           console.log('Usuario registrado exitosamente:', usuarioRegistrado);
-          this.router.navigate(['/inicio-sesion']);
+          
+          this.autenticacion.cerrarSesion();
+          
+          setTimeout(() => {
+            this.router.navigate(['/inicio-sesion']);
+          }, 3000);
         },
         error: (error) => {
           this.estaCargando = false;
           console.error('Error al registrar usuario:', error);
           
-
           if (error.type === 'EMAIL_DUPLICADO') {
             this.mensajeError = error.message;
           } else {
@@ -99,43 +109,40 @@ export class Registro {
     } 
   }
 
-  get Nombre() 
-  { 
+  get Nombre() { 
     return this.form.get("nombre"); 
   } 
 
-  get Apellido() 
-  { 
+  get Apellido() { 
     return this.form.get("apellido"); 
   } 
 
-  get Area() 
-  { 
+  get Area() { 
     return this.form.get("area"); 
   } 
   
-  get Email() 
-  { 
-    return this.form.get("email"); 
+  get Email() { 
+   return this.form.get("email"); 
   } 
 
-  get Password() 
-  { 
+   get Password() { 
     return this.form.get("password"); 
   } 
-
-  get ConfirmPassword() 
-  { 
+ 
+  get ConfirmPassword() { 
     return this.form.get("confirmPassword"); 
   } 
 
-  confirmarPassword(event:Event) 
-  { 
+  confirmarPassword(event: Event) { 
     const password = this.form.get('password')?.value; 
     const confirmPassword = this.form.get('confirmPassword')?.value;
-    if (password !== confirmPassword) 
-    {  
+    if (password !== confirmPassword) {  
       this.form.get('confirmPassword')?.setErrors({ 'noCoinciden': true }); 
+    } else {
+      const confirmPasswordControl = this.form.get('confirmPassword');
+      if (confirmPasswordControl?.hasError('noCoinciden')) {
+        confirmPasswordControl.setErrors(null);
+      }
     }
   }
 }
