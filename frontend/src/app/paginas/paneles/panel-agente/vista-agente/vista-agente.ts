@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ReclamosService, Reclamo } from '../../../../servicios/reclamos.service';
-import { CommonModule } from '@angular/common';
+import { Autenticacion, Usuario } from '../../../../servicios/autenticacion';
 
 @Component({
   selector: 'app-vista-agente',
@@ -15,16 +15,19 @@ export class VistaAgente implements OnInit {
   form!: FormGroup;
   reclamoSeleccionado: Reclamo | undefined;
   reclamos: Reclamo[] = [];
+  usuarioActual: Usuario | null = null;
 
-  constructor(private formBuilder: FormBuilder, private reclamosService: ReclamosService) {
+  constructor(private formBuilder: FormBuilder, private reclamosService: ReclamosService, private autenticacion: Autenticacion) {
     this.form = this.formBuilder.group({
       estado: ['', Validators.required],
-      acciones: ['', Validators.required]
+      acciones: ['', Validators.required],
+      
     });
   }
 
   ngOnInit() {
     this.cargarReclamos();
+    this.autenticacion.usuarioActual$.subscribe(usuario => this.usuarioActual = usuario);
   }
 
   cargarReclamos() {

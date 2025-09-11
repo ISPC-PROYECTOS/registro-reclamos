@@ -5,7 +5,7 @@
                 <img class="img-fluid me-3" src="perfil-user.png" alt="Usuario" width="100">
                 <div>
                     <h2 class="mb-0">Bienvenido</h2>
-                    <h5 class="mb-0">Nombre Agente</h5>
+                    <h5 class="mb-0">{{ usuarioActual?.nombre }} {{ usuarioActual?.apellido }}</h5>
                 </div>
             </div>
             <div>
@@ -62,9 +62,9 @@
                 <div class="mb-3">
                     <label for="estado" class="form-label">Nuevo estado:</label>
                     <select id="estado" formControlName="estado" class="form-select">
-                        <option value="recibido">Recibido</option>
-                        <option value="en-proceso">En proceso</option>
-                        <option value="resuelto">Resuelto</option>
+                        <option value="Recibido">Recibido</option>
+                        <option value="En proceso">En proceso</option>
+                        <option value="Resuelto">Resuelto</option>
                     </select>
                     @if (Estado?.errors && Estado?.touched) {
                     @if (Estado?.hasError('required')) {
