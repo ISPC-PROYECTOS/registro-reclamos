@@ -1,7 +1,6 @@
 <main class="contenido-principal">
     <section class="container dashboard-agente">
-        <div
-            class="bienvenida-agente d-flex flex-column flex-md-row justify-content-between align-items-center p-3">
+        <div class="bienvenida-agente d-flex flex-column flex-md-row justify-content-between align-items-center p-3">
             <div class="d-flex align-items-center mb-3 mb-md-0">
                 <img class="img-fluid me-3" src="perfil-user.png" alt="Usuario" width="100">
                 <div>
@@ -35,36 +34,22 @@
                         </tr>
                     </thead>
                     <tbody class="text-center">
+                        @for (reclamo of reclamos; track reclamo.id) {
                         <tr>
-                            <td class="d-none d-md-table-cell">001</td>
-                            <td>Juan Pérez</td>
-                            <td class="d-none d-md-table-cell">13/05/2025 10:32</td>
-                            <td class="d-none d-md-table-cell">Recibido</td>
-                            <td>Problema con servidor</td>
-                            <td>Alta</td>
-                            <td><a routerLink="." class="btn btn-sm btn-primary boton-atender">Atender</a>
+                            <td class="d-none d-md-table-cell">{{ reclamo.id }}</td>
+                            <td>{{ reclamo.usuario }}</td>
+                            <td class="d-none d-md-table-cell">{{ reclamo.fechaHora }}</td>
+                            <td class="d-none d-md-table-cell">{{ reclamo.estado }}</td>
+                            <td>{{ reclamo.descripcion }}</td>
+                            <td>{{ reclamo.prioridad }}</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary boton-atender"
+                                    (click)="seleccionarReclamo(reclamo)">
+                                    Atender
+                                </button>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="d-none d-md-table-cell">002</td>
-                            <td>Sandra Rodríguez</td>
-                            <td class="d-none d-md-table-cell">13/05/2025 13:37</td>
-                            <td class="d-none d-md-table-cell">Recibido</td>
-                            <td>Problema con impresora compartida</td>
-                            <td>Media</td>
-                            <td><a routerLink="." class="btn btn-sm btn-primary boton-atender">Atender</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="d-none d-md-table-cell">003</td>
-                            <td>Miguel Fernández</td>
-                            <td class="d-none d-md-table-cell">13/05/2025 15:45</td>                                
-                            <td class="d-none d-md-table-cell">Recibido</td>
-                            <td>Solicitud de cambio de mouse</td>
-                            <td>Baja</td>
-                            <td><a routerLink="." class="btn btn-sm btn-primary boton-atender">Atender</a>
-                            </td>
-                        </tr>
+                        }
                     </tbody>
                 </table>
             </div>
@@ -82,19 +67,20 @@
                         <option value="resuelto">Resuelto</option>
                     </select>
                     @if (Estado?.errors && Estado?.touched) {
-                        @if (Estado?.hasError('required')) {
-                          <p class="text-danger">El estado del reclamo es requerido.</p>
-                        }
-                      }
+                    @if (Estado?.hasError('required')) {
+                    <p class="text-danger">El estado del reclamo es requerido.</p>
+                    }
+                    }
                 </div>
                 <div class="mb-3">
                     <label for="acciones" class="form-label">Acciones realizadas:</label>
-                    <textarea id="acciones" formControlName="acciones" class="form-control" rows="4" placeholder="Detalla las acciones..." required></textarea>
+                    <textarea id="acciones" formControlName="acciones" class="form-control" rows="4"
+                        placeholder="Detalla las acciones..." required></textarea>
                     @if (Acciones?.errors && Acciones?.touched) {
-                        @if (Acciones?.hasError('required')) {
-                          <p class="text-danger">La acción realizada es requerida.</p>
-                        }
-                      }
+                    @if (Acciones?.hasError('required')) {
+                    <p class="text-danger">La acción realizada es requerida.</p>
+                    }
+                    }
                 </div>
                 <div class="d-grid">
                     <button type="submit" class="btn btn-success boton-guardar">Guardar</button>
