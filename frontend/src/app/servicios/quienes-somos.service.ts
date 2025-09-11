@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class QuienesSomosService {
 
-  private profesionalList: { id: number, name: string; perfil: string, photo: string, portfolio: string }[] = [
+  private profesionalList: { id: number, name: string; perfil: string, photo: string, 
+    portfolio: string }[] = [
  ];
 
   constructor(private http: HttpClient) {  }
