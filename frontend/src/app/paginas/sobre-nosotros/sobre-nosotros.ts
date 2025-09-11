@@ -18,7 +18,7 @@ export class SobreNosotros implements OnInit{
   ngOnInit(): void {
     this.quienesSomosService.obtenerProfecionales() .subscribe({
       next: (data) => {console.log(data);
-        this.profesionalList=data["quienes_somos"];
+        this.profesionalList=data;
       },
       error: (error) => console.error(error),
       complete: () => console.info('complete')
