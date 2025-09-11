@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReclamosService, Reclamo } from '../../../../servicios/reclamos.service';
+import { Autenticacion, Usuario } from '../../../../servicios/autenticacion';
 
 @Component({
   selector: 'app-cargar-reclamo',
@@ -16,7 +17,8 @@ export class CargarReclamo {
 
   constructor(
     private formBuilder: FormBuilder,
-    private reclamosService: ReclamosService 
+    private reclamosService: ReclamosService ,
+    private autenticacion: Autenticacion
   ) {
     this.form = this.formBuilder.group({
       descripcion: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(300)]],
@@ -29,9 +31,9 @@ export class CargarReclamo {
     this.formMessage = ''; 
 
     if (this.form.valid) {
-      
+      const usuarioActual = this.autenticacion.obtenerUsuarioActual();
       const nuevoReclamo: Reclamo = {
-        usuario: 'Usuario de prueba', 
+        usuario: usuarioActual ? `${usuarioActual.nombre} ${usuarioActual.apellido}` : 'Usuario desconocido',
         fechaHora: new Date().toLocaleString(),
         estado: 'Recibido',
         descripcion: this.form.value.descripcion,
