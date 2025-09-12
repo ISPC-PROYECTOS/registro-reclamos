@@ -38,6 +38,7 @@ export class Autenticacion {
             const usuario = usuarios[0];
             localStorage.setItem('usuarioActual', JSON.stringify(usuario));
             this.usuarioActualSubject.next(usuario);
+            return usuario;
           }
           return null;
         })
