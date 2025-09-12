@@ -9,7 +9,7 @@
 
         <div>
           <h2 class="mb-0">Bienvenido</h2>
-          <h5 class="mb-0">Nombre Usuario</h5>
+          <h5 class="mb-0">{{ usuarioActual?.nombre }} {{ usuarioActual?.apellido }}</h5>
         </div>
       </div>
       <div class="row text-center">
@@ -48,33 +48,22 @@
               <th>Calificar</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="d-none d-md-table-cell">001</td>
-
-              <td class="d-none d-md-table-cell">12/05/2025 10:32</td>
-              <td>Resuelto</td>
-              <td>Problema con servidor</td>
-              <td class="d-none d-md-table-cell">Alta</td>
-              <td class="text-center"><a routerLink="." class="btn btn-sm btn-primary boton-atender">Calificar</a></td>
-            </tr>
-            <tr>
-              <td class="d-none d-md-table-cell">002</td>
-              <td class="d-none d-md-table-cell">13/05/2025 13:37</td>
-              <td>En proceso</td>
-              <td>Problema con impresora compartida</td>
-              <td class="d-none d-md-table-cell">Media</td>
-              <td class="text-center"><a routerLink="." class="btn btn-sm btn-primary boton-atender">Calificar</a></td>
-            </tr>
-            <tr>
-              <td class="d-none d-md-table-cell">003</td>
-              <td class="d-none d-md-table-cell">14/05/2025 15:45</td>
-              <td>Emitido</td>
-              <td>Solicitud de cambio de mouse</td>
-              <td class="d-none d-md-table-cell">Baja</td>
-              <td class="text-center"><a routerLink="." class="btn btn-sm btn-primary boton-atender">Calificar</a></td>
-
-            </tr>
+          <tbody class="text-center">
+                        @for (reclamo of reclamos; track reclamo.id) {
+                        <tr>
+                            <td class="d-none d-md-table-cell">{{ reclamo.id }}</td>
+                            <td class="d-none d-md-table-cell">{{ reclamo.fechaHora }}</td>
+                            <td class="d-none d-md-table-cell">{{ reclamo.estado }}</td>
+                            <td>{{ reclamo.descripcion }}</td>
+                            <td>{{ reclamo.prioridad }}</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary boton-atender">
+                                    Calificar
+                                </button>
+                            </td>
+                        </tr>
+                        }
+            
           </tbody>
         </table>
       </div>
