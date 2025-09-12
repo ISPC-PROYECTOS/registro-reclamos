@@ -6,7 +6,7 @@ import { throwError } from 'rxjs';
 
 
 export interface Usuario {
-  id?: number;
+  id?: string;
   nombre: string;
   apellido: string;
   area: string;

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 export interface Reclamo {
   id?: string; 
+  idUsuario?: string;
   usuario: string;
   fechaHora: string;
   estado: string;

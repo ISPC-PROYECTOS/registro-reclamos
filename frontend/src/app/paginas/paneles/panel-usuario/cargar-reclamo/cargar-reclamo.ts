@@ -33,6 +33,7 @@ export class CargarReclamo {
     if (this.form.valid) {
       const usuarioActual = this.autenticacion.obtenerUsuarioActual();
       const nuevoReclamo: Reclamo = {
+        idUsuario: usuarioActual ? usuarioActual.id : "Usuario desconocido",
         usuario: usuarioActual ? `${usuarioActual.nombre} ${usuarioActual.apellido}` : 'Usuario desconocido',
         fechaHora: new Date().toLocaleString(),
         estado: 'Recibido',
