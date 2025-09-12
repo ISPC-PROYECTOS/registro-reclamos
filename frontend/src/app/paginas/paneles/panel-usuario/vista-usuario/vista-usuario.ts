@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CargarReclamo } from '../cargar-reclamo/cargar-reclamo';
-import { ReclamosService } from '../../../../servicios/reclamos.service';
-import { Subscriber } from 'rxjs';
+import { ReclamosService, Reclamo } from '../../../../servicios/reclamos.service';
+import { Autenticacion, Usuario } from '../../../../servicios/autenticacion';
 @Component({
   selector: 'app-vista-usuario',
   imports: [RouterLink],
@@ -10,25 +9,24 @@ import { Subscriber } from 'rxjs';
   styleUrl: './vista-usuario.css'
 })
 export class VistaUsuario  implements OnInit{
-  reclamoList: { id: number, fechaHora: Date; estado: string, descripcion: string, 
-    prioridad: string }[] = [];
+    reclamos: Reclamo[] = [];
+    usuarioActual: Usuario | null = null;
 
-  constructor(private reclamosService: ReclamosService) { }
-    ngOnInit(): void {
-    this.reclamosService.mostrarReclamo().subscribe({
-      next: (data) => {
-        // Asigna los datos a la lista de reclamos.
-        // Asegúrate de que la propiedad 'reclamos' exista en la respuesta de la API.
-        this.reclamoList = data["reclamos"];
-        console.log("Reclamos cargados:", this.reclamoList);
-      },
-      error: (error) => {
-        console.error("Error al obtener los reclamos:", error);
-      },
-      complete: () => {
-        console.info('Carga de reclamos completada.');
-      }
-    })
+  constructor(private reclamosService: ReclamosService, private autenticacion: Autenticacion) { }
+
+  ngOnInit() {
+    this.obtenerReclamosPorId();
+    this.autenticacion.usuarioActual$.subscribe(usuario => this.usuarioActual = usuario);
   }
 
+  obtenerReclamosPorId() {
+    const usuarioActual = this.autenticacion.obtenerUsuarioActual();
+    if (usuarioActual && usuarioActual.id) {
+      this.reclamosService.obtenerReclamosPorId(usuarioActual.id).subscribe(reclamos => {
+        this.reclamos = reclamos;
+        console.log('Reclamos del usuario:', this.reclamos);
+      });
+    }
+  }
 }
+
