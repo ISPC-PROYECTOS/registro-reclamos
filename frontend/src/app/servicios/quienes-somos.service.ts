@@ -14,7 +14,7 @@ export class QuienesSomosService {
   constructor(private http: HttpClient) {  }
 
   obtenerProfecionales(): Observable<any> {
-    return this.http.get("data/quienes-somos.json");
+    return this.http.get("http://localhost:3000/Profesionales");
     //return this.profesionalList;
   }
   
