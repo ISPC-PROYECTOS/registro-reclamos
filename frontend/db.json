@@ -94,15 +94,6 @@
       "estado": "Recibido",
       "descripcion": "falta cable de red",
       "prioridad": "media"
-    },
-    {
-      "id": "17b6",
-      "idUsuario": "4531",
-      "usuario": "Juan Perez",
-      "fechaHora": "12/9/2025, 0:56:17",
-      "estado": "Recibido",
-      "descripcion": "kkkkkk nnnnn nn",
-      "prioridad": "baja"
     }
   ],
   "Profesionales": [
