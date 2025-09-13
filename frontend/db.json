@@ -103,6 +103,16 @@
       "estado": "Recibido",
       "descripcion": "kkkkkk nnnnn nn",
       "prioridad": "baja"
+    },
+    {
+      "id": "ebe3",
+      "idUsuario": "4531",
+      "usuario": "Juan Perez",
+      "fechaHora": "12/9/2025, 08:49:41",
+      "estado": "En proceso",
+      "descripcion": "Problemas de conexión con la BBDD.",
+      "prioridad": "media",
+      "acciones": "Se revisa la conexión con el servidor."
     }
   ],
   "Profesionales": [
