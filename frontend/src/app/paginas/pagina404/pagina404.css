@@ -1,24 +1,25 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1f1f1f; /* Gris carbón */
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    text-align: center;
-  }
+.page-404 {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  h1 {
-    font-size: 6rem;
-    margin: 0;
-    color: #0077b6; /* Azul profundo */
-  }
+.formulario h1 {
+  font-size: 6rem;
+  margin-bottom: 20px;
+  color: #34344e;
+  font-family: 'Montserrat', sans-serif;
+}
 
-  p {
-    font-size: 1.5rem;
-    margin: 20px 0;
-    color: #cccccc;
-  }
+.formulario p {
+  font-size: 1.2rem;
+  color: #3a415a; 
+}
+
+.formulario a {
+  width: auto;
+  display: inline-block;
+  padding: 10px 20px;
+}
