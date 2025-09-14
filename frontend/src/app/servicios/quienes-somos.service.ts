@@ -15,7 +15,6 @@ export class QuienesSomosService {
 
   obtenerProfecionales(): Observable<any> {
     return this.http.get("http://localhost:3000/Profesionales");
-    //return this.profesionalList;
   }
   
 }
