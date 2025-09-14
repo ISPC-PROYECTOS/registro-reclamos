@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 80vh; 
-  color: #3a415a; 
+  min-height: 80vh;
+  color: #3a415a;
   font-family: sans-serif;
   gap: 20px;
 }
@@ -18,21 +18,21 @@
 .card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  background-color: #ffffff; 
-  color: #333; 
+  background-color: #ffffff;
+  color: #333;
 }
 
 .card-title {
-  color: #566981; 
+  color: #566981;
 }
 
 .btn-primary {
-  background-color: #566981; 
+  background-color: #566981;
   border-color: #566981;
 }
 
 .btn-primary:hover {
-  background-color: #3a415a; 
+  background-color: #3a415a;
   border-color: #3a415a;
 }
 

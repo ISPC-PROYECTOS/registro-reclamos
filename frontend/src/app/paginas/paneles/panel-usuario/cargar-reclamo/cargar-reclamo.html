@@ -3,14 +3,13 @@
     <img src="gri-full-logo.png" alt="Logo GRI" class="logo-gri img-fluid" />
     <br />
 
-    <!-- Contenedor para mostrar el mensaje de éxito o error -->
     @if (formMessage) {
-      <div [ngClass]="{
+    <div [ngClass]="{
         'alert alert-success': formMessage.includes('exitosamente'),
         'alert alert-danger': !formMessage.includes('exitosamente')
       }">
-        {{ formMessage }}
-      </div>
+      {{ formMessage }}
+    </div>
     }
 
     <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
@@ -18,16 +17,16 @@
         <label for="descripcion">Descripción del reclamo:</label><br />
         <textarea id="descripcion" formControlName="descripcion" rows="4"></textarea>
         @if (Descripcion?.errors && Descripcion?.touched) {
-          @if (Descripcion?.hasError('required')) {
-            <p class="text-danger">La descripción del reclamo es requerida.</p>
-          }
-          @else if (Descripcion?.hasError('minlength')) {
-            <p class="text-danger">La descripción del reclamo debe tener al menos 8 caracteres.</p>
-          }
-          @else if (Descripcion?.hasError('maxlength')) {
-            <p class="text-danger">La descripción del reclamo no debe exceder los 300 caracteres.</p>
-          }
-        }         
+        @if (Descripcion?.hasError('required')) {
+        <p class="text-danger">La descripción del reclamo es requerida.</p>
+        }
+        @else if (Descripcion?.hasError('minlength')) {
+        <p class="text-danger">La descripción del reclamo debe tener al menos 8 caracteres.</p>
+        }
+        @else if (Descripcion?.hasError('maxlength')) {
+        <p class="text-danger">La descripción del reclamo no debe exceder los 300 caracteres.</p>
+        }
+        }
       </div>
 
       <div class="campo-formulario campo-completo">
@@ -39,9 +38,9 @@
           <option value="baja">Baja</option>
         </select>
         @if (Prioridad?.errors && Prioridad?.touched) {
-          @if (Prioridad?.hasError('required')) {
-            <p class="text-danger">La prioridad es requerida.</p>
-          }
+        @if (Prioridad?.hasError('required')) {
+        <p class="text-danger">La prioridad es requerida.</p>
+        }
         }
       </div>
 

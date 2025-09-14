@@ -6,27 +6,29 @@ import { Autenticacion, Usuario } from '../../../../servicios/autenticacion';
   selector: 'app-vista-usuario',
   imports: [RouterLink],
   templateUrl: './vista-usuario.html',
-  styleUrl: './vista-usuario.css'
+  styleUrl: './vista-usuario.css',
 })
-export class VistaUsuario  implements OnInit{
-    reclamos: Reclamo[] = [];
-    usuarioActual: Usuario | null = null;
+export class VistaUsuario implements OnInit {
+  reclamos: Reclamo[] = [];
+  usuarioActual: Usuario | null = null;
 
-  constructor(private reclamosService: ReclamosService, private autenticacion: Autenticacion) { }
+  constructor(
+    private reclamosService: ReclamosService,
+    private autenticacion: Autenticacion,
+  ) {}
 
   ngOnInit() {
     this.obtenerReclamosPorId();
-    this.autenticacion.usuarioActual$.subscribe(usuario => this.usuarioActual = usuario);
+    this.autenticacion.usuarioActual$.subscribe((usuario) => (this.usuarioActual = usuario));
   }
 
   obtenerReclamosPorId() {
     const usuarioActual = this.autenticacion.obtenerUsuarioActual();
     if (usuarioActual && usuarioActual.id) {
-      this.reclamosService.obtenerReclamosPorId(usuarioActual.id).subscribe(reclamos => {
+      this.reclamosService.obtenerReclamosPorId(usuarioActual.id).subscribe((reclamos) => {
         this.reclamos = reclamos;
         console.log('Reclamos del usuario:', this.reclamos);
       });
     }
   }
 }
-

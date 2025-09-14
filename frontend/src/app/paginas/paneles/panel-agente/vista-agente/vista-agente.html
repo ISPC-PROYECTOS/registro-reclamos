@@ -45,7 +45,8 @@
                             <td>{{ reclamo.descripcion }}</td>
                             <td>{{ reclamo.prioridad }}</td>
                             <td>
-                                <button class="btn btn-sm btn-primary boton-atender" (click)="seleccionarReclamo(reclamo)">
+                                <button class="btn btn-sm btn-primary boton-atender"
+                                    (click)="seleccionarReclamo(reclamo)">
                                     Atender
                                 </button>
                             </td>
@@ -68,9 +69,9 @@
                         <option value="Resuelto">Resuelto</option>
                     </select>
                     @if (Estado?.errors && Estado?.touched) {
-                        @if (Estado?.hasError('required')) {
-                            <p class="text-danger">El estado del reclamo es requerido.</p>
-                        }
+                    @if (Estado?.hasError('required')) {
+                    <p class="text-danger">El estado del reclamo es requerido.</p>
+                    }
                     }
                 </div>
                 <div class="mb-3">
@@ -78,9 +79,9 @@
                     <textarea id="acciones" formControlName="acciones" class="form-control" rows="4"
                         placeholder="Detalla las acciones..." required></textarea>
                     @if (Acciones?.errors && Acciones?.touched) {
-                        @if (Acciones?.hasError('required')) {
-                            <p class="text-danger">La acción realizada es requerida.</p>
-                        }
+                    @if (Acciones?.hasError('required')) {
+                    <p class="text-danger">La acción realizada es requerida.</p>
+                    }
                     }
                 </div>
                 <div class="d-grid">

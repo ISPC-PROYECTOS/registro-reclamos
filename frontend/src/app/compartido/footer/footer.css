@@ -1,14 +1,16 @@
-footer{
-    background: #34344E;
-    color: #cbdad5;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.85rem;
+footer {
+  background: #34344e;
+  color: #cbdad5;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
 }
-footer a{
-    color: #cbdad5;
-    text-decoration: none;
+
+footer a {
+  color: #cbdad5;
+  text-decoration: none;
 }
-footer a:hover{
-    text-decoration: underline;
+
+footer a:hover {
+  text-decoration: underline;
 }

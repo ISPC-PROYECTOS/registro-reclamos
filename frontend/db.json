@@ -96,7 +96,7 @@
       "prioridad": "media"
     }
   ],
-  "Profesionales": [
+  "profesionales": [
     {
       "id": "1",
       "name": "Hebe Pereyra",

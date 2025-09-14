@@ -1,152 +1,156 @@
-html, body {
-    background: linear-gradient(137deg, #CBDAD5, #89A7B1);
-    font-family: 'Open Sans', sans-serif;
-    color: #3A415A;
+html,
+body {
+  background: linear-gradient(137deg, #cbdad5, #89a7b1);
+  font-family: 'Open Sans', sans-serif;
+  color: #3a415a;
 }
 
-h1, h2, h3 {
-    color: #34344E;
-    font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3 {
+  color: #34344e;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .formulario {
-    text-align: center;
+  text-align: center;
 }
 
 .formulario img {
-    width: 240px;
-    height: auto;
-    margin: 0 auto 20px auto;
-    display: block;
-    filter: drop-shadow(2px 2px 1px #ffffff);
+  width: 240px;
+  height: auto;
+  margin: 0 auto 20px auto;
+  display: block;
+  filter: drop-shadow(2px 2px 1px #ffffff);
 }
 
 .formulario label {
-    color: #34344E;
-    font-weight: bold;
-    display: block;
-    margin: 10px 0 5px 0;
-    text-align: center;
+  color: #34344e;
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px 0;
+  text-align: center;
 }
 
-.formulario input[type="email"],
-.formulario input[type="text"],
-.formulario input[type="password"],
+.formulario input[type='email'],
+.formulario input[type='text'],
+.formulario input[type='password'],
 .formulario select,
 .formulario textarea {
-    background-color: #fff;
-    border: 1px solid #566981;
-    border-radius: 6px;
-    padding: 10px;
-    color: #34344E;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 8px 0;
+  background-color: #fff;
+  border: 1px solid #566981;
+  border-radius: 6px;
+  padding: 10px;
+  color: #34344e;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 8px 0;
 }
 
 .formulario textarea {
-    resize: vertical;
-    min-height: 100px;
+  resize: vertical;
+  min-height: 100px;
 }
 
 .formulario button,
 .formulario a {
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    box-sizing: border-box;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .formulario button {
-    background-color: #566981;
-    color: #fff;
+  background-color: #566981;
+  color: #fff;
 }
 
 .formulario button:hover {
-    background-color: #3a415a;
+  background-color: #3a415a;
 }
 
 .formulario a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    background-color: #566981;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #566981;
 }
 
 .formulario a:hover {
-    background-color: #cbdad5;
-    color: #566981;
+  background-color: #cbdad5;
+  color: #566981;
 }
 
 .tarjeta {
-    padding: 30px;
-    border-radius: 12px;
-    background-color: rgba(203, 218, 213, 0.9); /* translúcido */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: rgba(203, 218, 213, 0.9); /* translúcido */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .text-danger {
-    color: #d9534f;
-    font-size: 14px;
-    margin-top: 5px;
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 .boton-registro,
 .boton-reclamos,
 .boton-atender,
 .boton-guardar {
-    background-color: #34344e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 12px;
-    transition: all 0.3s ease;
+  background-color: #34344e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
 }
 
 .boton-registro:hover,
 .boton-reclamos:hover,
 .boton-atender:hover,
 .boton-guardar:hover {
-    background-color: #89a7b1;
-    color: white;
-    cursor: pointer;
+  background-color: #89a7b1;
+  color: white;
+  cursor: pointer;
 }
 
 .tabla-reclamos th {
-    background-color: #566981;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+  background-color: #566981;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 .tabla-reclamos td {
-    border-top: 1px solid #3a415a;
-    padding: 10px;
+  border-top: 1px solid #3a415a;
+  padding: 10px;
 }
 
 .formulario-agente {
-    background: white;
+  background: white;
 }
 
 .formulario-agente h3,
 .tabla-reclamos h3 {
-    color: #3a415a;
+  color: #3a415a;
 }
 
 .ng-valid:not(form).ng-touched {
-    border-left: 5px solid #42A948;
+  border-left: 5px solid #42a948;
 }
+
 .ng-invalid:not(form).ng-touched {
-    border-left: 5px solid #a94442;
+  border-left: 5px solid #a94442;
 }

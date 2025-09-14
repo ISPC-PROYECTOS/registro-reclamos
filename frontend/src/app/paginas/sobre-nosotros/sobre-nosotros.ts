@@ -7,24 +7,28 @@ import { Subscriber } from 'rxjs';
   selector: 'app-sobre-nosotros',
   imports: [],
   templateUrl: './sobre-nosotros.html',
-  styleUrl: './sobre-nosotros.css'
+  styleUrl: './sobre-nosotros.css',
 })
-export class SobreNosotros implements OnInit{
-  profesionalList: { id: number, name: string; perfil: string, photo: string, portfolio: string }[] = [];
-  
-  constructor(private quienesSomosService: QuienesSomosService){
+export class SobreNosotros implements OnInit {
+  profesionalList: {
+    id: number;
+    name: string;
+    perfil: string;
+    photo: string;
+    portfolio: string;
+  }[] = [];
 
-  }
+  constructor(private quienesSomosService: QuienesSomosService) {}
   ngOnInit(): void {
-    this.quienesSomosService.obtenerProfecionales() .subscribe({
-      next: (data) => {console.log(data);
-        this.profesionalList=data;
+    this.quienesSomosService.obtenerProfesionales().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.profesionalList = data;
       },
       error: (error) => console.error(error),
-      complete: () => console.info('complete')
+      complete: () => console.info('complete'),
     });
-    
+
     throw new Error('Method not implemented.');
   }
 }
-

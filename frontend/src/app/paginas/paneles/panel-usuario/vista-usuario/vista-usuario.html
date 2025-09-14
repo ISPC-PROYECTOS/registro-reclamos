@@ -43,20 +43,21 @@
             </tr>
           </thead>
           <tbody class="text-center">
+
             <!-- Tabla dinámica -->
             @for (reclamo of reclamos; track reclamo.id) {
-              <tr>
-                <td class="d-none d-md-table-cell">{{ reclamo.id }}</td>
-                <td class="d-none d-md-table-cell">{{ reclamo.fechaHora }}</td>
-                <td>{{ reclamo.estado }}</td>
-                <td>{{ reclamo.descripcion }}</td>
-                <td class="d-none d-md-table-cell">{{ reclamo.prioridad }}</td>
-                <td>
-                  <button class="btn btn-sm btn-primary boton-atender">
-                    Calificar
-                  </button>
-                </td>
-              </tr>
+            <tr>
+              <td class="d-none d-md-table-cell">{{ reclamo.id }}</td>
+              <td class="d-none d-md-table-cell">{{ reclamo.fechaHora }}</td>
+              <td>{{ reclamo.estado }}</td>
+              <td>{{ reclamo.descripcion }}</td>
+              <td class="d-none d-md-table-cell">{{ reclamo.prioridad }}</td>
+              <td>
+                <button class="btn btn-sm btn-primary boton-atender">
+                  Calificar
+                </button>
+              </td>
+            </tr>
             }
           </tbody>
         </table>

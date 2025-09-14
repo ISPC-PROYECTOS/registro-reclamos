@@ -1,21 +1,22 @@
-nav{
-    background-color: #34344E;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-.nav-logo img{
-    width: 70px;
+nav {
+  background-color: #34344e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-nav ul li{
-    padding: 10px;
+.nav-logo img {
+  width: 70px;
 }
 
-.nav-link{
-    color: #cbdad5;
-    font-size: 18px;
-    transition: color 0.3s;
+nav ul li {
+  padding: 10px;
 }
 
-.nav-link:hover{
-    color: #89A7B1;
+.nav-link {
+  color: #cbdad5;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #89a7b1;
 }

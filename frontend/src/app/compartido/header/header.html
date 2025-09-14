@@ -4,50 +4,40 @@
       <a routerLink="/inicio-sesion" class="navbar-brand nav-logo">
         <img src="gri-logo-blanco.png" alt="Logo GRI" />
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div
-        class="collapse navbar-collapse justify-content-center"
-        id="navbarSupportedContent"
-      >
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
 
           <!-- Mostrar solo si NO está logueado -->
           @if (!estaLogueado) {
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/inicio-sesion">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/registro">Registro</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/inicio-sesion">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/registro">Registro</a>
+          </li>
           }
 
           <!-- Mostrar solo si está logueado y es usuario o agente -->
           @if (estaLogueado && (esUsuario || esAgente)) {
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/vista-usuario">
-                Dashboard Usuario
-              </a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/vista-usuario">
+              Dashboard Usuario
+            </a>
+          </li>
           }
 
           <!-- Mostrar solo si está logueado y es agente -->
           @if (estaLogueado && esAgente) {
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/vista-agente">
-                Dashboard Agente
-              </a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/vista-agente">
+              Dashboard Agente
+            </a>
+          </li>
           }
 
           <!-- Mostrar siempre -->
@@ -57,11 +47,11 @@
 
           <!-- Mostrar solo si está logueado -->
           @if (estaLogueado) {
-            <li class="nav-item">
-              <button class="nav-link btn btn-link" (click)="cerrarSesion()">
-                Cerrar Sesión
-              </button>
-            </li>
+          <li class="nav-item">
+            <button class="nav-link btn btn-link" (click)="cerrarSesion()">
+              Cerrar Sesión
+            </button>
+          </li>
           }
         </ul>
       </div>
