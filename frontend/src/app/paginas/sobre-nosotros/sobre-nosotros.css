@@ -1,33 +1,42 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh; 
-    color: #3a415a; 
-    font-family: sans-serif;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .card {
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh; 
+  color: #3a415a; 
+  font-family: sans-serif;
+  gap: 20px;
+}
 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: #ffffff; 
-    color: #333; 
-  }
-  
-  .card-title {
-    color: #566981; 
-  }
-  
-  .btn-primary {
-    background-color: #566981; 
-    border-color: #566981;
-  }
-  
-  .btn-primary:hover {
-    background-color: #3a415a; 
-    border-color: #3a415a;
-  }
-  
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #ffffff; 
+  color: #333; 
+}
+
+.card-title {
+  color: #566981; 
+}
+
+.btn-primary {
+  background-color: #566981; 
+  border-color: #566981;
+}
+
+.btn-primary:hover {
+  background-color: #3a415a; 
+  border-color: #3a415a;
+}
+
+.logo-sharkcode img {
+  max-width: 200px;
+  height: auto;
+}
