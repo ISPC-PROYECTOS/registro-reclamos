@@ -1,69 +1,81 @@
 <div class="container-fluid">
-    <div class="formulario">
-      <img src="gri-full-logo.png" alt="Logo GRI" class="logo-gri"/>
-      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+  <div class="formulario text-center">
+    <img src="gri-full-logo.png" alt="Logo GRI" class="logo-gri" />
 
-        @if (mensajeError){
+    <div class="d-flex justify-content-center">
+      <div class="card shadow-lg tarjeta p-4">
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+
+          @if (mensajeError){
           <div class="alert alert-danger" role="alert">
             {{ mensajeError }}
           </div>
-        }
-        @if (estaCargando){
+          }
+
+          @if (estaCargando){
           <div class="alert alert-info" role="alert">
             <div class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Cargando...</span>
             </div>
             Iniciando sesión...
           </div>
-        }
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <label for="username" class="form-label">Usuario (Email):</label>
-            <input type="email" formControlName="email" class="form-control" id="username" name="username" required />
-            <div>  
+          }
+
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <label for="username" class="form-label">Usuario (Email):</label>
+              <input type="email" formControlName="email" class="form-control" id="username" name="username" required />
+              <div>
                 @if (Email?.errors && Email?.touched) {
-                    @if (Email?.hasError('required')){
-                        <p class="text-danger">
-                        El email es requerido.
-                        </p>
-                    }
-                    @else if (Email?.hasError('email')){
-                        <p class="text-danger">
-                        El formato del email debe ser válido.
-                        </p>
-                    }
+                @if (Email?.hasError('required')){
+                <p class="text-danger">
+                  El email es requerido.
+                </p>
                 }
+                @else if (Email?.hasError('email')){
+                <p class="text-danger">
+                  El formato del email debe ser válido.
+                </p>
+                }
+                }
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <label for="password" class="form-label">Contraseña:</label><br />
-            <input type="password" formControlName="password" class="form-control" id="password" name="password" required />
-            <div>  
+
+          <div class="row justify-content-center mt-3">
+            <div class="col-lg-12">
+              <label for="password" class="form-label">Contraseña:</label>
+              <input type="password" formControlName="password" class="form-control" id="password" name="password"
+                required />
+              <div>
                 @if (Password?.errors && Password?.touched) {
-                    @if (Password?.hasError('required')){
-                        <p class="text-danger">
-                        El password es requerido.
-                        </p>
-                    }
+                @if (Password?.hasError('required')){
+                <p class="text-danger">
+                  La contraseña es requerida.
+                </p>
                 }
+                }
+              </div>
             </div>
           </div>
-        </div>
-        <br />
+
+          <div class="mt-4">
             <button type="submit" class="btn btn-primary" [disabled]="estaCargando">
               @if (estaCargando) {
-                <span class="spinner-border spinner-border-sm" role="status"> </span>
+              <span class="spinner-border spinner-border-sm" role="status"></span>
               Iniciando...
               } @else {
-                Iniciar sesión
+              Iniciar sesión
               }
             </button>
-      </form>
-      <h3>¿No tienes cuenta?</h3>
-      <p class="boton-registro">
-        <a routerLink="/registro">Regístrate aquí</a>
-      </p>
+          </div>
+        </form>
+      </div>
     </div>
+
+    <h4 class="pt-5 pb-2">¿No tienes cuenta?</h4>
+    <p class="pb-3">
+      <a routerLink="/registro">Regístrate aquí</a>
+    </p>
   </div>
+</div>
