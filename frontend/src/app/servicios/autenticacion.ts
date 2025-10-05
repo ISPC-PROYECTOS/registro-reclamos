@@ -5,7 +5,7 @@ import { map, catchError, switchMap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 export interface Usuario {
-  id?: string;
+  id?: number;
   nombre: string;
   apellido: string;
   area: string;
