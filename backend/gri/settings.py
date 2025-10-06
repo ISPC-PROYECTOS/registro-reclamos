@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'autenticacion',
+    'gestion_reclamos'
 ]
 
 MIDDLEWARE = [
