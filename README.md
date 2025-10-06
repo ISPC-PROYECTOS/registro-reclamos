@@ -29,3 +29,7 @@ Este proyecto tiene como finalidad el desarrollo de un sistema digital destinado
 
 - **Mariela Suárez** – *Desarrolladora*  
   [@MarielarosaSZ](https://github.com/MarielarosaSZ)
+
+## Usuario de agente para probar funcionamiento
+Usuario: admin@gri.com
+Contraseña: admingri
