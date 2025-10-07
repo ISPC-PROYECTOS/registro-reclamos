@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from .models import Reclamo, GestionReclamo
+from .models import Reclamo , GestionReclamo
 from .serializers import ReclamoSerializer, GestionReclamoSerializer
 
 # --- Vistas para la gestión de Reclamos por el Usuario (Punto de entrada de datos) ---
@@ -73,8 +73,8 @@ class GestionReclamoCreateView(generics.CreateAPIView):
         Asegura que el campo 'reclamo' (ForeignKey) se pase correctamente.
         El frontend debe enviar el ID del reclamo en el cuerpo de la petición.
         """
-        # Si el usuario gestor no viene en el cuerpo, usamos el usuario autenticado
-        usuario_gestor = self.request.data.get('usuario_gestor', self.request.user.username)
+        # Si el usuario no viene en el cuerpo, usamos el nombre del usuario autenticado.
+        usuario_gestion = self.request.data.get('usuario_gestion', self.request.user.username)
         
         # El campo 'reclamo' ya viene como FK ID en la petición JSON
         serializer.save(usuario_gestor=usuario_gestor)
