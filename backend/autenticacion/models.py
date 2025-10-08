@@ -7,7 +7,7 @@ class Usuarios(models.Model):
     nombre = models.CharField(max_length=30, null=False, help_text="Nombre del usuario.")
     apellido = models.CharField(max_length=30, null=False, help_text="Apellido del usuario.")
     area = models.CharField(max_length=10, null=False, help_text="Área del usuario.")
-    email = models.EmailField(unique=True, null=False, validators=[RegexValidator(r'^\d{8,100}$')], help_text="Correo electrónico único.")
+    email = models.EmailField(unique=True, null=False, max_length=100, help_text="Correo electrónico único.")
     password = models.CharField(max_length=255, null=False, help_text="Contraseña del usuario.")
     rol = models.CharField(max_length=10, choices=[('agente', 'Agente'), ('usuario', 'Usuario')], null=False, default='usuario', help_text="Rol del usuario.")
     
