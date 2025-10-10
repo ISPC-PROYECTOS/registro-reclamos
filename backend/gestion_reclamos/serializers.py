@@ -13,4 +13,9 @@ class ReclamoSerializer(serializers.ModelSerializer):
             'descripcion', 
             'prioridad'
         ]
-        read_only_fields = ('fecha_hora', 'estado', 'id')
+        read_only_fields = ('id', 
+            'id_usuario', 
+            'usuario',
+            'fecha_hora', 
+            'descripcion', 
+            'prioridad')
