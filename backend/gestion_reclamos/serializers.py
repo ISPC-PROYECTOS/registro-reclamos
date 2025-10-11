@@ -1,21 +1,46 @@
 from rest_framework import serializers
 from .models import Reclamo
 
-class ReclamoSerializer(serializers.ModelSerializer):
+
+
+class ReclamoUserSerializer(serializers.ModelSerializer):
+   
     class Meta:
         model = Reclamo
         fields = [
             'id', 
             'id_usuario', 
-            'usuario',
-            'fecha_hora', 
+            'usuario', 
+            'descripcion', 
+            'prioridad',
             'estado', 
-            'descripcion', 
-            'prioridad'
+            'fecha_hora'
         ]
-        read_only_fields = ('id', 
+        
+        read_only_fields = ['id', 'fecha_hora', 'estado']
+
+
+# --- 2. Serializador para el Gestor (Actualización de Estado) ---
+
+class ReclamoGestorSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Reclamo
+        fields = [
+            'id', 
             'id_usuario', 
-            'usuario',
-            'fecha_hora', 
+            'usuario', 
             'descripcion', 
-            'prioridad')
+            'prioridad',
+            'estado', 
+            'fecha_hora'
+        ]
+        
+        read_only_fields = [
+            'id', 
+            'id_usuario', 
+            'usuario', 
+            'descripcion', 
+            'prioridad', 
+            'fecha_hora'
+        ]

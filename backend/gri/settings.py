@@ -83,15 +83,13 @@ WSGI_APPLICATION = 'gri.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # For PostgreSQL, you would use:
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'app_db',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'tu_contraseña',
-        # 'HOST': 'localhost',
-        # 'PORT': '5432',
+        
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'app_db',
+         'USER': 'postgres',
+         'PASSWORD': 'Ispc.2024',
+         'HOST': 'localhost',
+         'PORT': '5432',
     }
 }
 
