@@ -17,17 +17,16 @@ PRIORIDADES_RECLAMO = [
 
 class Reclamo(models.Model):
     
-    
-    usuario = models.CharField(max_length=255, verbose_name="Nombre del Usuario que realiza el reclamo")
     descripcion = models.TextField(max_length=500, verbose_name="Descripción del reclamo")
     
  
-    idUsuario = models.CharField(max_length=255, verbose_name="ID del Usuario que realiza el reclamo", default="Desconocido")
+    idUsuario =models.ForeignKey('autenticacion.Usuarios', on_delete=models.CASCADE, verbose_name="Usuario")
     fechaHora = models.DateTimeField(auto_now_add=True, verbose_name="Fecha y Hora de Creación")
     
  
     estado = models.CharField(max_length=50, choices=ESTADOS_RECLAMO, default='Recibido', verbose_name="Estado Actual")
     prioridad = models.CharField(max_length=50, choices=PRIORIDADES_RECLAMO, default='media')
+    acciones = models.TextField(max_length=500, verbose_name="Descripción de la acción")
     
 
     def __str__(self):
@@ -35,5 +34,5 @@ class Reclamo(models.Model):
 
     class Meta:
         verbose_name_plural = "Reclamos"
-        ordering = ['-fecha_hora']
+        ordering = ['-fechaHora']
        
