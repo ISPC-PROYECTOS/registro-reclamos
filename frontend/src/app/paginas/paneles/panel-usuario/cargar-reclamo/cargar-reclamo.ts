@@ -33,7 +33,7 @@ export class CargarReclamo {
     if (this.form.valid) {
       const usuarioActual = this.autenticacion.obtenerUsuarioActual();
       const nuevoReclamo: Reclamo = {
-        idUsuario: usuarioActual ? usuarioActual.id : 'Usuario desconocido',
+        idUsuario: usuarioActual ? usuarioActual.id : undefined,
         usuario: usuarioActual
           ? `${usuarioActual.nombre} ${usuarioActual.apellido}`
           : 'Usuario desconocido',

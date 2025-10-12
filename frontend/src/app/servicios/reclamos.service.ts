@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 export interface Reclamo {
   id?: string;
-  idUsuario?: string;
+  idUsuario?: number;
   usuario: string;
   fechaHora: string;
   estado: string;
@@ -42,7 +42,7 @@ export class ReclamosService {
     return this.http.patch<Reclamo>(`${this.apiUrl}/${id}`, datos);
   }
 
-  obtenerReclamosPorId(idUsuario: string): Observable<Reclamo[]> {
+  obtenerReclamosPorId(idUsuario: number): Observable<Reclamo[]> {
     return this.http
       .get<Reclamo[]>(this.apiUrl)
       .pipe(

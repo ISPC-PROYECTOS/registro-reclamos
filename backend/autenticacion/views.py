@@ -21,8 +21,8 @@ class InicioSesionView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class VerificarEmailView(APIView):
-    def get(self, request):
-        email = request.query_params.get('email')
+    def post(self, request):
+        email = request.data.get('email')
         if not email:
             return Response({'error': 'Email requerido'}, status=status.HTTP_400_BAD_REQUEST)
         

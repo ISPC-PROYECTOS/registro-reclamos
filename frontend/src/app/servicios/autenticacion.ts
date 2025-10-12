@@ -18,7 +18,7 @@ export interface Usuario {
   providedIn: 'root',
 })
 export class Autenticacion {
-  private apiUrl = 'http://localhost:3000/usuarios';
+  private apiUrl = 'http://localhost:8000/api/v1/usuario/';
   private usuarioActualSubject = new BehaviorSubject<Usuario | null>(null);
   public usuarioActual$ = this.usuarioActualSubject.asObservable();
 
@@ -30,57 +30,33 @@ export class Autenticacion {
   }
 
   iniciarSesion(email: string, password: string): Observable<Usuario | null> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}?email=${email}&password=${password}`).pipe(
-      map((usuarios) => {
-        if (usuarios.length > 0) {
-          const usuario = usuarios[0];
-          localStorage.setItem('usuarioActual', JSON.stringify(usuario));
-          this.usuarioActualSubject.next(usuario);
-          return usuario;
-        }
-        return null;
-      }),
-    );
+      return this.http.post<Usuario>(`${this.apiUrl}inicio-sesion/`, { email, password }).pipe(
+          map((usuario) => {
+              localStorage.setItem('usuarioActual', JSON.stringify(usuario));
+              this.usuarioActualSubject.next(usuario);
+              return usuario;
+          }),
+          catchError(() => {
+              return throwError(() => new Error('Credenciales inválidas'));
+          })
+      );
   }
 
   verificarEmailExistente(email: string): Observable<boolean> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}?email=${email}`).pipe(
-      map((usuarios) => usuarios.length > 0),
-      catchError((error) => {
-        console.error('Error al verificar email:', error);
-        return throwError(() => error);
-      }),
+    return this.http.post<{existe: boolean}>(`${this.apiUrl}verificar-email/`, { email }).pipe(
+        map((response) => response.existe)
     );
   }
+  
   registrarse(usuario: Usuario): Observable<Usuario> {
-    return this.verificarEmailExistente(usuario.email).pipe(
-      switchMap((emailExiste) => {
-        if (emailExiste) {
-          throw new Error('EMAIL_YA_REGISTRADO');
-        }
-        return this.http.post<Usuario>(this.apiUrl, usuario).pipe(
-          map((nuevoUsuario) => {
+    return this.http.post<Usuario>(`${this.apiUrl}registro/`, usuario).pipe(
+        map((nuevoUsuario) => {
             localStorage.setItem('usuarioActual', JSON.stringify(nuevoUsuario));
             this.usuarioActualSubject.next(nuevoUsuario);
             return nuevoUsuario;
-          }),
-          catchError((error) => {
-            console.error('Error al registrar usuario:', error);
-            return throwError(() => error);
-          }),
-        );
-      }),
-      catchError((error) => {
-        if (error.message === 'EMAIL_YA_REGISTRADO') {
-          return throwError(() => ({
-            type: 'EMAIL_DUPLICADO',
-            message: 'Este email ya está registrado',
-          }));
-        }
-        return throwError(() => error);
-      }),
+        })
     );
-  }
+}
 
   cerrarSesion(): void {
     localStorage.removeItem('usuarioActual');
