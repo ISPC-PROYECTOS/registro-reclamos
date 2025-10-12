@@ -1,11 +1,9 @@
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
 from .models import Reclamo
-# Importamos ambos serializadores para poder usarlos condicionalmente
 from .serializers import ReclamoUserSerializer, ReclamoGestorSerializer 
 
 
-# --- Vistas de Reclamo ---
 
 class ReclamoListCreateView(generics.ListCreateAPIView):
     

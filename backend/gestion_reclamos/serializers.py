@@ -9,15 +9,15 @@ class ReclamoUserSerializer(serializers.ModelSerializer):
         model = Reclamo
         fields = [
             'id', 
-            'id_usuario', 
+            'idUsuario', 
             'usuario', 
             'descripcion', 
             'prioridad',
             'estado', 
-            'fecha_hora'
+            'fechaHora'
         ]
         
-        read_only_fields = ['id', 'fecha_hora', 'estado']
+        read_only_fields = ['id', 'fechaHora', 'estado']
 
 
 # --- 2. Serializador para el Gestor (Actualización de Estado) ---
@@ -28,19 +28,19 @@ class ReclamoGestorSerializer(serializers.ModelSerializer):
         model = Reclamo
         fields = [
             'id', 
-            'id_usuario', 
+            'idUsuario', 
             'usuario', 
             'descripcion', 
             'prioridad',
             'estado', 
-            'fecha_hora'
+            'fechaHora'
         ]
         
         read_only_fields = [
             'id', 
-            'id_usuario', 
+            'idUsuario', 
             'usuario', 
             'descripcion', 
             'prioridad', 
-            'fecha_hora'
+            'fechaHora'
         ]

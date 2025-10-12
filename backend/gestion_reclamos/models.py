@@ -22,8 +22,8 @@ class Reclamo(models.Model):
     descripcion = models.TextField(max_length=500, verbose_name="Descripción del reclamo")
     
  
-    id_usuario = models.CharField(max_length=255, verbose_name="ID del Usuario que realiza el reclamo", default="Desconocido")
-    fecha_hora = models.DateTimeField(auto_now_add=True, verbose_name="Fecha y Hora de Creación")
+    idUsuario = models.CharField(max_length=255, verbose_name="ID del Usuario que realiza el reclamo", default="Desconocido")
+    fechaHora = models.DateTimeField(auto_now_add=True, verbose_name="Fecha y Hora de Creación")
     
  
     estado = models.CharField(max_length=50, choices=ESTADOS_RECLAMO, default='Recibido', verbose_name="Estado Actual")
