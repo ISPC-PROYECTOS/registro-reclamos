@@ -26,7 +26,7 @@ class Reclamo(models.Model):
  
     estado = models.CharField(max_length=50, choices=ESTADOS_RECLAMO, default='Recibido', verbose_name="Estado Actual")
     prioridad = models.CharField(max_length=50, choices=PRIORIDADES_RECLAMO, default='media')
-    acciones = models.TextField(max_length=500, verbose_name="Descripción de la acción")
+    acciones = models.TextField(max_length=500, verbose_name="Descripción de la acción", null=True)
     
 
     def __str__(self):
