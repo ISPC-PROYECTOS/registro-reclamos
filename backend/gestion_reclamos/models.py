@@ -3,7 +3,7 @@ from django.db import models
 
 ESTADOS_RECLAMO = [
     ('Recibido', 'Recibido'),
-    ('En Proceso', 'En Proceso'),
+    ('En proceso', 'En proceso'),
     ('Resuelto', 'Resuelto'),
     ('Cerrado', 'Cerrado'),
 ]
