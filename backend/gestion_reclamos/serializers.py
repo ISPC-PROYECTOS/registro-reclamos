@@ -8,7 +8,7 @@ class ReclamoBaseSerializer(serializers.ModelSerializer):
     
     idUsuario = serializers.PrimaryKeyRelatedField(
         queryset=Usuarios.objects.all(), 
-        source='idUsuario',
+       
     )
 
     def get_usuario(self, obj):
