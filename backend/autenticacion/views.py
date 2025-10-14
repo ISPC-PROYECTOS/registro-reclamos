@@ -16,8 +16,10 @@ class InicioSesionView(APIView):
                 usuario_serializer = UsuarioSerializer(usuario)
                 return Response(usuario_serializer.data, status=status.HTTP_200_OK)
             except Usuarios.DoesNotExist:
-                return Response([], status=status.HTTP_200_OK)
-        
+                return Response(
+                    {'error': 'Credenciales inválidas'}, 
+                    status=status.HTTP_401_UNAUTHORIZED
+                )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class VerificarEmailView(APIView):
