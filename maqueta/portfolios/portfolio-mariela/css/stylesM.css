@@ -40,25 +40,42 @@ a {
 }
 
 
-.savate-titulo {
-  font-family: "Savate", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
+.averia-sans-libre-light {
+  font-family: "Averia Sans Libre", sans-serif;
+  font-weight: 300;
   font-style: normal;
 }
-.savate-subtitulo {
-  font-family: "Savate", sans-serif;
-  font-optical-sizing: auto;    
-  font-weight: 400;
+
+.averia-sans-libre-regular {
+  font-family: "Averia Sans Libre", sans-serif;
+  font-weight: 200;
   font-style: normal;
-  color: rgb(127, 34, 214);
 }
-.savate-texto {
-  font-family: "Savate", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
+
+.averia-sans-libre-bold {
+  font-family: "Averia Sans Libre", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.averia-sans-libre-light-italic {
+  font-family: "Averia Sans Libre", sans-serif;
+  font-weight: 300;
   font-style: italic;
 }
+
+.averia-sans-libre-regular-italic {
+  font-family: "Averia Sans Libre", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.averia-sans-libre-bold-italic {
+  font-family: "Averia Sans Libre", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 
 .playpen-sans-deva-texto2> {
   font-family: "Playpen Sans Deva", cursive;

@@ -1,20 +1,21 @@
 <div class="container my-4">
-    <div class="row justify-content-center g-3">
-      @for (profesional of profesionalList; track profesional.id) {
-    
-        <div class="col-12 col-sm-6 col-md-4 col-lg">
-          <div class="card h-100 d-flex flex-column justify-content-between"> 
-            <img [src]="profesional.photo" class="card-img-top" alt="{{ profesional.name }}">
-            <div class="card-body text-center">
-              <h5 class="card-title">{{ profesional.name }}</h5>
-              <p class="card-text">{{ profesional.perfil }}</p>
-              <a href="{{ profesional.portfolio }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                Ver Portafolio
-              </a>
-            </div>
-          </div>
+  <div class="logo-sharkcode text-center mb-4">
+    <img src="sharkCode-logo.png" alt="SharkCode" class="img-fluid" />
+  </div>
+  <div class="row justify-content-center g-3">
+    @for (profesional of profesionalList; track profesional.id) {
+    <div class="col-12 col-sm-6 col-md-4 col-lg">
+      <div class="card h-100 d-flex flex-column justify-content-between">
+        <img [src]="profesional.photo" class="card-img-top" alt="{{ profesional.name }}">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ profesional.name }}</h5>
+          <p class="card-text">{{ profesional.perfil }}</p>
+          <a href="{{ profesional.portfolio }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            Ver Portafolio
+          </a>
         </div>
-      }
-    </div>
-  </div>
-  
+      </div>
+    </div>
+    }
+  </div>
+</div>
