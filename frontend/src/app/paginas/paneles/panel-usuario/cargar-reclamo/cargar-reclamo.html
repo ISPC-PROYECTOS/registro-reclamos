@@ -4,10 +4,10 @@
     <br />
 
     @if (formMessage) {
-    <div [ngClass]="{
-        'alert alert-success': formMessage.includes('exitosamente'),
-        'alert alert-danger': !formMessage.includes('exitosamente')
-      }">
+    <div class="alert" [ngClass]="{
+    'alert-success': formMessage.toLowerCase().includes('éxito'), 
+    'alert-danger': !formMessage.toLowerCase().includes('éxito') 
+    }">
       {{ formMessage }}
     </div>
     }
@@ -45,7 +45,7 @@
       </div>
 
       <br />
-      <button type="submit" class="btn btn-primary boton-registro">Enviar Reclamo</button>
+      <button type="submit" class="btn btn-primary boton-registro">Enviar reclamo</button>
     </form>
   </div>
 </div>

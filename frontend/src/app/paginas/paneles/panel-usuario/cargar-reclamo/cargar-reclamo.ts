@@ -45,12 +45,12 @@ export class CargarReclamo {
 
       this.reclamosService.crearReclamo(nuevoReclamo).subscribe({
         next: (response) => {
-          this.formMessage = `Reclamo enviado correctamente. ID: ${response.id}`;
+          this.formMessage = `ÉXITO: Reclamo enviado correctamente. ID: ${response.id}`;
           console.log('Reclamo creado:', response);
           this.form.reset();
         },
         error: (error) => {
-          this.formMessage = 'Hubo un error al enviar el reclamo. Por favor, inténtalo de nuevo.';
+          this.formMessage = 'ERROR: Hubo un error al enviar el reclamo. Por favor, inténtalo de nuevo.';
           console.error('Error al crear el reclamo:', error);
         },
       });
