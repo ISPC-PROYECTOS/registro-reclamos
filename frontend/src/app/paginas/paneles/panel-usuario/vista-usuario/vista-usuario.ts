@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ReclamosService, Reclamo } from '../../../../servicios/reclamos.service';
 import { Autenticacion, Usuario } from '../../../../servicios/autenticacion';
+import { CommonModule, DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-vista-usuario',
-  imports: [RouterLink],
+  imports: [RouterLink, DatePipe],
   templateUrl: './vista-usuario.html',
   styleUrl: './vista-usuario.css',
 })

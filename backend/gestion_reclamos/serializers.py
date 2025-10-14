@@ -25,7 +25,8 @@ class ReclamoBaseSerializer(serializers.ModelSerializer):
             'descripcion', 
             'prioridad',
             'estado', 
-            'fechaHora'
+            'fechaHora', 
+            'acciones'
         ]
 
 

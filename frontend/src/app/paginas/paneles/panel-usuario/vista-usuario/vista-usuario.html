@@ -11,10 +11,6 @@
       </div>
       <div class="row text-center">
         <div class="col-xs-12">
-          <a routerLink="." class="btn btn-primary col text-center boton-reclamos d-block w-100 mb-2">
-            Reclamos emitidos
-          </a>
-
           <a routerLink="/cargar-reclamo" class="btn btn-primary boton-reclamos col text-center mt-2">
             Emitir reclamo
           </a>
@@ -39,6 +35,7 @@
               <th>Estado</th>
               <th>Descripción</th>
               <th class="d-none d-md-table-cell">Prioridad</th>
+              <th>Acción</th>
               <th>Calificar</th>
             </tr>
           </thead>
@@ -48,10 +45,11 @@
             @for (reclamo of reclamos; track reclamo.id) {
             <tr>
               <td class="d-none d-md-table-cell">{{ reclamo.id }}</td>
-              <td class="d-none d-md-table-cell">{{ reclamo.fechaHora }}</td>
+              <td class="d-none d-md-table-cell">{{ reclamo.fechaHora | date:'dd/MM/yyyy HH:mm' }}</td>
               <td>{{ reclamo.estado }}</td>
               <td>{{ reclamo.descripcion }}</td>
               <td class="d-none d-md-table-cell">{{ reclamo.prioridad }}</td>
+              <td>{{reclamo.acciones}}</td>
               <td>
                 <button class="btn btn-sm btn-primary boton-atender">
                   Calificar
