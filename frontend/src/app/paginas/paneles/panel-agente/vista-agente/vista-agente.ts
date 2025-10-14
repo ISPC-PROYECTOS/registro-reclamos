@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ReclamosService, Reclamo } from '../../../../servicios/reclamos.service';
 import { Autenticacion, Usuario } from '../../../../servicios/autenticacion';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-vista-agente',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, DatePipe],
   templateUrl: './vista-agente.html',
   styleUrl: './vista-agente.css',
 })
@@ -41,6 +42,12 @@ export class VistaAgente implements OnInit {
 
   seleccionarReclamo(reclamo: Reclamo) {
     this.reclamoSeleccionado = reclamo;
+    this.form.reset();
+  }
+
+  cancelarAtencion() {
+    this.reclamoSeleccionado = undefined;
+    this.form.reset();   
   }
 
   onEnviar(event: Event) {
