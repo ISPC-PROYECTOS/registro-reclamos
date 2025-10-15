@@ -1,22 +1,32 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { QuienesSomosService } from '../../servicios/quienes-somos.service';
 
 @Component({
   selector: 'app-sobre-nosotros',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [],
   templateUrl: './sobre-nosotros.html',
-  styleUrls: ['./sobre-nosotros.css']
+  styleUrl: './sobre-nosotros.css',
 })
-export class SobreNosotros {
-  profesionalList: any[] = [];
+export class SobreNosotros implements OnInit {
+  profesionalList: {
+    id: number;
+    name: string;
+    perfil: string;
+    photo: string;
+    portfolio: string;
+  }[] = [];
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() {
-    this.http.get<any[]>('/assets/data/profesionales.json').subscribe(data => {
-      this.profesionalList = data;
+  constructor(private quienesSomosService: QuienesSomosService) {}
+  ngOnInit(): void {
+    this.quienesSomosService.obtenerProfesionales().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.profesionalList = data;
+      },
+      error: (error) => console.error(error),
+      complete: () => console.info('complete'),
     });
+
+    throw new Error('Method not implemented.');
   }
 }
