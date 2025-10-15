@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -27,7 +28,8 @@ export class InicioSesion {
   }
 
   onEnviar(event: Event) {
-    event.preventDefault;
+    event.preventDefault();
+    
     if (this.form.valid) {
       this.estaCargando = true;
       this.mensajeError = '';
@@ -39,13 +41,11 @@ export class InicioSesion {
           if (usuario) {
             alert(`¡Bienvenido ${usuario.nombre}!`);
             this.router.navigate(['/vista-usuario']);
-          } else {
-            this.mensajeError = 'Credenciales incorrectas';
           }
         },
-        error: (error) => {
+        error: (error: Error) => {
           this.estaCargando = false;
-          this.mensajeError = 'Ocurrió un error al iniciar sesión';
+          this.mensajeError = error.message;
           console.error('Error al iniciar sesión:', error);
         },
       });
@@ -57,6 +57,7 @@ export class InicioSesion {
   get Email() {
     return this.form.get('email');
   }
+  
   get Password() {
     return this.form.get('password');
   }

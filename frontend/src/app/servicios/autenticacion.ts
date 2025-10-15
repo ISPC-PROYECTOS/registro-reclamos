@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpErrorResponse } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { map, catchError, switchMap } from 'rxjs/operators';
+import { map, catchError} from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 export interface Usuario {
@@ -36,10 +36,20 @@ export class Autenticacion {
               this.usuarioActualSubject.next(usuario);
               return usuario;
           }),
-          catchError(() => {
-              return throwError(() => new Error('Credenciales inválidas'));
-          })
-      );
+          catchError((error: HttpErrorResponse) => {
+        let mensajeError = 'Error al iniciar sesión';
+        
+        if (error.status === 401) {
+          mensajeError = error.error?.error || 'Email o contraseña incorrectos';
+        } else if (error.status === 400) {
+          mensajeError = 'Datos inválidos';
+        } else if (error.status === 0) {
+          mensajeError = 'No se pudo conectar con el servidor';
+        }
+        
+        return throwError(() => new Error(mensajeError));
+      })
+    );
   }
 
   verificarEmailExistente(email: string): Observable<boolean> {
@@ -54,9 +64,18 @@ export class Autenticacion {
             localStorage.setItem('usuarioActual', JSON.stringify(nuevoUsuario));
             this.usuarioActualSubject.next(nuevoUsuario);
             return nuevoUsuario;
-        })
+        }),
+    catchError((error: HttpErrorResponse) => {
+        let mensajeError = 'Error al registrarse';
+        
+        if (error.status === 400 && error.error?.type === 'EMAIL_DUPLICADO') {
+          mensajeError = error.error.message;
+        }
+        
+        return throwError(() => new Error(mensajeError));
+      })
     );
-}
+  }
 
   cerrarSesion(): void {
     localStorage.removeItem('usuarioActual');
