@@ -9,49 +9,50 @@ import { Autenticacion, Usuario } from '../../../../servicios/autenticacion';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './cargar-reclamo.html',
-  styleUrl: './cargar-reclamo.css'
+  styleUrl: './cargar-reclamo.css',
 })
 export class CargarReclamo {
   form!: FormGroup;
-  formMessage: string = ''; 
+  formMessage: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
-    private reclamosService: ReclamosService ,
-    private autenticacion: Autenticacion
+    private reclamosService: ReclamosService,
+    private autenticacion: Autenticacion,
   ) {
     this.form = this.formBuilder.group({
       descripcion: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(300)]],
-      prioridad: ['', Validators.required]
+      prioridad: ['', Validators.required],
     });
   }
 
   onEnviar(event: Event) {
     event.preventDefault();
-    this.formMessage = ''; 
+    this.formMessage = '';
 
     if (this.form.valid) {
       const usuarioActual = this.autenticacion.obtenerUsuarioActual();
       const nuevoReclamo: Reclamo = {
-        idUsuario: usuarioActual ? usuarioActual.id : "Usuario desconocido",
-        usuario: usuarioActual ? `${usuarioActual.nombre} ${usuarioActual.apellido}` : 'Usuario desconocido',
+        idUsuario: usuarioActual ? usuarioActual.id : undefined,
+        usuario: usuarioActual
+          ? `${usuarioActual.nombre} ${usuarioActual.apellido}`
+          : 'Usuario desconocido',
         fechaHora: new Date().toLocaleString(),
         estado: 'Recibido',
         descripcion: this.form.value.descripcion,
         prioridad: this.form.value.prioridad,
       };
 
-      
       this.reclamosService.crearReclamo(nuevoReclamo).subscribe({
         next: (response) => {
-          this.formMessage = `Reclamo enviado correctamente. ID: ${response.id}`;
+          this.formMessage = `ÉXITO: Reclamo enviado correctamente. ID: ${response.id}`;
           console.log('Reclamo creado:', response);
-          this.form.reset(); 
+          this.form.reset();
         },
         error: (error) => {
-          this.formMessage = 'Hubo un error al enviar el reclamo. Por favor, inténtalo de nuevo.';
+          this.formMessage = 'ERROR: Hubo un error al enviar el reclamo. Por favor, inténtalo de nuevo.';
           console.error('Error al crear el reclamo:', error);
-        }
+        },
       });
     } else {
       this.formMessage = 'Por favor, completa todos los campos requeridos.';
@@ -62,7 +63,7 @@ export class CargarReclamo {
   get Descripcion() {
     return this.form.get('descripcion');
   }
-  
+
   get Prioridad() {
     return this.form.get('prioridad');
   }

@@ -1,6 +1,7 @@
-.ng-valid:not(form).ng-touched {
-    border-left: 5px solid #42A948;
+.contenido-principal{
+    min-height: 80vh;
 }
-.ng-invalid:not(form).ng-touched {
-    border-left: 5px solid #a94442;
+
+.boton-registro {
+  width: 40%;
 }

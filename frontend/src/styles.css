@@ -1,139 +1,156 @@
-html, body {
-    background-color: #cbdad5;
-}
-
+html,
 body {
-    font-family: 'Open Sans', sans-serif;
-    min-height: 100vh;
+  background: linear-gradient(137deg, #cbdad5, #89a7b1);
+  font-family: 'Open Sans', sans-serif;
+  color: #3a415a;
 }
 
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3 {
+  color: #34344e;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.formulario{
-    color: #cbdad5;
-    padding: 20px;
-    text-align: center;
-}
-.formulario img{
-    width: 15em;
-    height: auto;
-    margin-bottom: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.formulario a{
-    color: #cbdad5;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #566981;
-    transition: background-color 0.3s ease;
-}
-.formulario a:hover{
-    background-color: #cbdad5;
-    color: #566981;
-}
-.formulario input[type="email"],
-.formulario input[type="text"],
-.formulario input[type="password"],
-.formulario select{
-    padding: 10px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: #566981;
-    color: #cbdad5;
-}
-.formulario button[type="submit"]{
-    padding: 10px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: #566981;
-    color: #cbdad5;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-sizing: border-box;
-}
-.formulario button[type="submit"]:hover {
-    background-color: #3a415a;
-}
-.formulario label{
-    color: #566981;
-    font-weight: bold;
-}
-.formulario h3 {
-    color: #566981;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-.boton-registro {
-    margin-top: 10px;
-}
-.boton-registro:hover{
-    color: #566981;
-    cursor: pointer;
+.formulario {
+  text-align: center;
 }
 
-.bienvenida-agente {
-    color: #3a415a;
-    background-color: #cbdad5;
-    font-weight: bold;
+.formulario img {
+  width: 240px;
+  height: auto;
+  margin: 0 auto 20px auto;
+  display: block;
+  filter: drop-shadow(2px 2px 1px #ffffff);
 }
 
-.boton-reclamos {
-    background-color: #34344e;
-    color: white;
-    border: #34344e;
+.formulario label {
+  color: #34344e;
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px 0;
+  text-align: center;
 }
 
-.tabla-reclamos th{
-    background-color: #566981;
-    color: white;
-    text-align: center;
-    padding: 5px;
-    border-radius: 3px;
-    padding: 10px;
-    border: 1px solid #ccc;
+.formulario input[type='email'],
+.formulario input[type='text'],
+.formulario input[type='password'],
+.formulario select,
+.formulario textarea {
+  background-color: #fff;
+  border: 1px solid #566981;
+  border-radius: 6px;
+  padding: 10px;
+  color: #34344e;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 8px 0;
 }
 
-.tabla-reclamos td{
-    border-top: 1px #3a415a solid;
-    padding: 10px;
+.formulario textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
-.boton-atender{
-    background-color: #34344e;
-    color: white;
-    border: none;
+.formulario button,
+.formulario a {
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.formulario-agente{
-    background: white;
+.formulario button {
+  background-color: #566981;
+  color: #fff;
 }
 
-.formulario-agente h3, .tabla-reclamos h3{
-    color: #3a415a;
+.formulario button:hover {
+  background-color: #3a415a;
 }
 
-.boton-guardar{
-    background-color: #34344e;
-    color: white;
-    border: none;
+.formulario a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #566981;
 }
 
+.formulario a:hover {
+  background-color: #cbdad5;
+  color: #566981;
+}
+
+.tarjeta {
+  padding: 30px;
+  border-radius: 12px;
+  background-color: rgba(203, 218, 213, 0.9); /* translúcido */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.text-danger {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.boton-registro,
+.boton-reclamos,
+.boton-atender,
+.boton-guardar {
+  background-color: #34344e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.boton-registro:hover,
 .boton-reclamos:hover,
 .boton-atender:hover,
 .boton-guardar:hover {
-    background-color: #89a7b1;
-    color: #34344e;
-    cursor: pointer;
+  background-color: #89a7b1;
+  color: white;
+  cursor: pointer;
+}
+
+.tabla-reclamos th {
+  background-color: #566981;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.tabla-reclamos td {
+  border-top: 1px solid #3a415a;
+  padding: 10px;
+}
+
+.formulario-agente {
+  background: white;
+}
+
+.formulario-agente h3,
+.tabla-reclamos h3 {
+  color: #3a415a;
+}
+
+.ng-valid:not(form).ng-touched {
+  border-left: 5px solid #42a948;
+}
+
+.ng-invalid:not(form).ng-touched {
+  border-left: 5px solid #a94442;
 }

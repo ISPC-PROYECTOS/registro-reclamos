@@ -1,12 +1,9 @@
 <main class="contenido-principal">
   <section class="container dashboard-agente">
     <!-- Sección de bienvenida -->
-    <div class="bienvenida-agente d-flex flex-column flex-md-row 
-                  justify-content-between align-items-center p-3">
-
+    <div class="bienvenida-agente d-flex flex-column flex-md-row justify-content-between align-items-center p-3">
       <div class="d-flex align-items-center mb-3 mb-md-0">
         <img class="img-fluid me-3" src="perfil-user.png" alt="Usuario" width="100">
-
         <div>
           <h2 class="mb-0">Bienvenido</h2>
           <h5 class="mb-0">{{ usuarioActual?.nombre }} {{ usuarioActual?.apellido }}</h5>
@@ -14,19 +11,12 @@
       </div>
       <div class="row text-center">
         <div class="col-xs-12">
-          <a routerLink="." class="btn btn-primary col text-center boton-reclamos d-block w-100 mb-2">
-            Reclamos emitidos
-          </a>
-
           <a routerLink="/cargar-reclamo" class="btn btn-primary boton-reclamos col text-center mt-2">
             Emitir reclamo
           </a>
         </div>
       </div>
-
     </div>
-
-
 
     <!-- Tabla de reclamos -->
     <div id="tabla-reclamos" class="container-fluid tabla-reclamos">
@@ -45,25 +35,28 @@
               <th>Estado</th>
               <th>Descripción</th>
               <th class="d-none d-md-table-cell">Prioridad</th>
+              <th>Acción</th>
               <th>Calificar</th>
             </tr>
           </thead>
           <tbody class="text-center">
-                        @for (reclamo of reclamos; track reclamo.id) {
-                        <tr>
-                            <td class="d-none d-md-table-cell">{{ reclamo.id }}</td>
-                            <td class="d-none d-md-table-cell">{{ reclamo.fechaHora }}</td>
-                            <td class="d-none d-md-table-cell">{{ reclamo.estado }}</td>
-                            <td>{{ reclamo.descripcion }}</td>
-                            <td>{{ reclamo.prioridad }}</td>
-                            <td>
-                                <button class="btn btn-sm btn-primary boton-atender">
-                                    Calificar
-                                </button>
-                            </td>
-                        </tr>
-                        }
-            
+
+            <!-- Tabla dinámica -->
+            @for (reclamo of reclamos; track reclamo.id) {
+            <tr>
+              <td class="d-none d-md-table-cell">{{ reclamo.id }}</td>
+              <td class="d-none d-md-table-cell">{{ reclamo.fechaHora | date:'dd/MM/yyyy HH:mm' }}</td>
+              <td>{{ reclamo.estado }}</td>
+              <td>{{ reclamo.descripcion }}</td>
+              <td class="d-none d-md-table-cell">{{ reclamo.prioridad }}</td>
+              <td>{{reclamo.acciones}}</td>
+              <td>
+                <button class="btn btn-sm btn-primary boton-atender">
+                  Calificar
+                </button>
+              </td>
+            </tr>
+            }
           </tbody>
         </table>
       </div>
