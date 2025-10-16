@@ -10,7 +10,6 @@ Este proyecto tiene como finalidad el desarrollo de un sistema digital destinado
 
 - Facilitar el ingreso y clasificación de reclamos internos.
 - Brindar visibilidad del estado de cada reclamo en tiempo real.
-- Generar reportes periódicos para la mejora continua de procesos.
 - Asegurar un entorno accesible y fácil de usar para todos los empleados.
 
 ### 👥 Equipo de trabajo
